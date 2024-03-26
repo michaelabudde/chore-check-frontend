@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import chorechecktitle from "../../assets/cc_title.svg";
-import default_profile_icon from "../../assets/default_profile_icon.svg";
+import chorechecktitle from "../../images/cc_title.svg";
+import default_profile_icon from "../../images/default_profile_icon.svg";
 // import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 // import { AuthContext } from "../../contexts/AuthContext.js";
 const Header = ({ handleClick }) => {
@@ -15,7 +15,6 @@ const Header = ({ handleClick }) => {
 
   // const loggedInHeader = (
   //   <nav className="header__nav">
-  //     <ul className="header__nav_container">
   //       <div className="header__nav_link">
   //         <Link className="header__nav_username" to="/profile">
   //           {username}
@@ -41,7 +40,6 @@ const Header = ({ handleClick }) => {
   //           )}
   //         </Link>
   //       </div>
-  //     </ul>
   //   </nav>
   // );
   // const loggedOutHeader = (
@@ -62,7 +60,7 @@ const Header = ({ handleClick }) => {
   // );
   return (
     <header className="header">
-      <div className="header__container">
+      <div>
         <Link to="/">
           <img
             src={chorechecktitle}
