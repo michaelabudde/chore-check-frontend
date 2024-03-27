@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import chorechecktitle from "../../images/cc_title.svg";
-import Navigation from "./Navigation";
-const Header = ({ handleClick }) => {
+import Navigation from "../Navigation/Navigation";
+const Header = ({ handleClick, handleNavBar }) => {
   return (
     <header className="header">
       <div>
@@ -15,7 +15,7 @@ const Header = ({ handleClick }) => {
           />
         </Link>
       </div>
-      <Navigation />
+      <Navigation handleNavBar={handleNavBar} />
     </header>
   );
 };
