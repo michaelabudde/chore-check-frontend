@@ -1,0 +1,52 @@
+/* Signed Out Main*/
+.main {
+  margin: 0;
+  padding: 132px 52px 32px 52px;
+  width: 100vw;
+}
+.main__catch {
+  display: flex;
+  flex-direction: column;
+}
+.main__button {
+  border: none;
+  padding: 5px 20px 5px 20px;
+  background-color: #fff;
+  color: #000;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
+  width: 174px;
+}
+.main__image {
+  width: 80vw;
+}
+.main__how {
+  display: flex;
+  flex-direction: column;
+}
+.main__about {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 32px;
+  padding-top: 32px;
+}
+
+.main__about_image {
+  width: 196px;
+  height: 196px;
+}
+.main__about_text {
+  width: 680px;
+  text-align: left;
+}
+
+/* Signed In Main*/
+.main__calendar {
+  width: 80vw;
+}
+.main__list {
+}
