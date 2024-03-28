@@ -2,6 +2,10 @@ import "./Main.css";
 import cleaning_1 from "../../images/cleaning_1.png";
 import cleaning_2 from "../../images/cleaning_2.png";
 import author_image from "../../images/author_image.png";
+import WeekCalendar from "react-week-calendar";
+import "react-week-calendar/dist/style.less";
+// or import css file
+// import 'react-week-calendar/dist/style.css';
 const Main = ({ handleClick }) => {
   //   const signedOutMain = (
   //    {/* move main_catch and main_how here*/}
@@ -66,7 +70,9 @@ const Main = ({ handleClick }) => {
 
     <main className="main">
       <div>
-        <div className="main__calendar"></div>
+        <div className="main__calendar">
+          <WeekCalendar></WeekCalendar>
+        </div>
         <h2> Your Chore List</h2>
         <div className="main__list"></div>
         <h2> Your Household Members</h2>
