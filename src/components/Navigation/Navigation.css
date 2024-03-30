@@ -42,10 +42,11 @@
   position: absolute;
   top: 100px;
   right: 20px;
-  background-color: #ffe4c4;
+  background-color: #fff7e9;
   border-radius: 30px;
   padding: 10px 20px;
   width: 200px;
+  z-index: 99;
 }
 .nav_dropdown.active {
   opacity: 1;

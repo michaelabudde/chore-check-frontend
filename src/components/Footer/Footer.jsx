@@ -1,7 +1,7 @@
 import "./Footer.css";
 import { Link } from "react-router-dom";
 
-import chorechecklogo from "../../images/cc_logo.png";
+import chorechecklogo from "../../images/greenCClogo.svg";
 const Footer = ({ handleClick }) => {
   return (
     <footer className="footer">

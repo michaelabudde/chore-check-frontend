@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import chorechecktitle from "../../images/cc_title.svg";
+import chorechecktitle from "../../images/greenCCtitle.svg";
 import Navigation from "../Navigation/Navigation";
 const Header = ({ handleClick, handleNavBar }) => {
   return (

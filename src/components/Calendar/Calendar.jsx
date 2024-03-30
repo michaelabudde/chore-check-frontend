@@ -5,6 +5,7 @@ import {
   Scheduler,
   WeekView,
   Appointments,
+  AllDayPanel,
 } from "@devexpress/dx-react-scheduler-material-ui";
 
 const currentDate = new Date().toLocaleDateString();
@@ -25,7 +26,8 @@ const Calendar = () => (
   <Paper>
     <Scheduler data={schedulerData}>
       <ViewState currentDate={currentDate} />
-      <WeekView startDayHour={9} endDayHour={14} />
+      <WeekView />
+      <AllDayPanel />
       <Appointments />
     </Scheduler>
   </Paper>

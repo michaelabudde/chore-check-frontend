@@ -4,7 +4,7 @@ import "./Navigation.css";
 
 // import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 // import { AuthContext } from "../../contexts/AuthContext.js";
-import default_profile_icon from "../../images/default_profile_icon.svg";
+import default_profile_icon from "../../images/greendefaultprofile.png";
 
 const Navigation = ({ handleClick, handleNavBar }) => {
   const [open, setOpen] = useState(false);
