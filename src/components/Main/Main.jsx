@@ -69,9 +69,7 @@ const Main = ({ handleClick }) => {
       <div>
         <h1>Your Completed Chores This Week</h1>
         <p>Click the calendar to log a chore</p>
-        <div className="main__calendar">
-          <Calendar></Calendar>
-        </div>
+        <div className="main__calendar"></div>
         <h2> Your Chore List</h2>
         <button>Add a Chore</button>
         <div className="main__list"></div>
