@@ -3,3 +3,12 @@
   margin: 0;
   box-sizing: border-box;
 }
+.calendar__chores .calendar__chores {
+  display: grid;
+  border-left: 1px solid #000;
+  border-top: 1px solid #000;
+}
+
+.calendar__chores .calendar__chores li:last-child {
+  border-left: none;
+}

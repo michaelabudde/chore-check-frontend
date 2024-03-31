@@ -1,1 +1,3 @@
-export default const range = (keyCount) => [...array(keyCount).keys()];
+// @ts-ignore
+const range = (keyCount) => [...Array(keyCount).keys()];
+export default range;
