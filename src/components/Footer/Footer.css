@@ -9,13 +9,14 @@
   font-style: normal;
   font-weight: 700; */
   line-height: 20px;
-  position: absolute;
+  position: absolute; /* Change position to absolute */
   box-sizing: border-box;
-  width: 100vw;
-  bottom: 0;
-  left: 0;
+  width: 100%; /* Adjust width to take full width of the container */
+  bottom: 0; /* Position at the bottom of the container */
+  left: 0; /* Align to the left edge of the container */
   margin-top: auto;
 }
+
 .footer__logo_container {
   display: flex;
   align-items: center;
