@@ -5,7 +5,13 @@ import "./Navigation.css";
 // import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 // import { AuthContext } from "../../contexts/AuthContext.js";
 import default_profile_icon from "../../images/greendefaultprofile.png";
-
+function DropdownItem(props) {
+  return (
+    <li className="nav_dropdown_item">
+      <a>{props.text}</a>
+    </li>
+  );
+}
 const Navigation = ({ handleClick, handleNavBar }) => {
   const [open, setOpen] = useState(false);
   // const { currentUser } = useContext(CurrentUserContext);
@@ -60,15 +66,9 @@ const Navigation = ({ handleClick, handleNavBar }) => {
   //     </div>
   //   </nav>
   // );
-  function DropdownItem(props) {
-    return (
-      <li className="nav_dropdown_item">
-        <a>{props.text}</a>
-      </li>
-    );
-  }
+
   return (
-    <div className="nav">
+    <nav className="nav">
       {/* {isSignedIn ? signedInHeader : signedOutHeader} */}
       {/* Signed out header */}
       {/* <>
@@ -87,7 +87,7 @@ const Navigation = ({ handleClick, handleNavBar }) => {
       </>
     </div> */}
       {/*Signed In Header*/}
-      <nav className="nav_signedin">
+      <div className="nav_signedin">
         <div className="nav_container">
           <div
             className="nav_trigger"
@@ -111,8 +111,8 @@ const Navigation = ({ handleClick, handleNavBar }) => {
             </ul>
           </div>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 };
 export default Navigation;

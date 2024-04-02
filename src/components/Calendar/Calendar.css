@@ -5,8 +5,8 @@
 }
 .calendar__chores .calendar__chores {
   display: grid;
-  border-left: 1px solid #000;
-  border-top: 1px solid #000;
+  border-left: 1px solid #9fbd84;
+  border-top: 1px solid #9fbd84;
 }
 
 .calendar__chores .calendar__chores li:last-child {

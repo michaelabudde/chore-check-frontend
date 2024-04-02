@@ -1,12 +1,18 @@
 /* Signed Out Main*/
+
 .main {
   margin: 0;
-  padding: 132px 52px 32px 52px;
+  padding-top: 132px; /* Adjust as needed */
+  padding-bottom: 32px;
   width: 100vw;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0; /* Position from the left edge of the viewport */
+  min-height: 100vh;
 }
 .main__catch {
   display: flex;

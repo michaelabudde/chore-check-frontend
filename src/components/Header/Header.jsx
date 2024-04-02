@@ -1,8 +1,10 @@
-import React, { useContext } from "react";
+// Header.jsx
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import chorechecktitle from "../../images/greenCCtitle.svg";
 import Navigation from "../Navigation/Navigation";
+import chorechecktitle from "../../images/greenCCtitle.svg";
+
 const Header = ({ handleClick, handleNavBar }) => {
   return (
     <header className="header">
@@ -15,8 +17,9 @@ const Header = ({ handleClick, handleNavBar }) => {
           />
         </Link>
       </div>
-      <Navigation handleNavBar={handleNavBar} />
+      <Navigation handleClick={handleClick} handleNavBar={handleNavBar} />
     </header>
   );
 };
+
 export default Header;
