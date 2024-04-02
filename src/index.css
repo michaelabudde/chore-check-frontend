@@ -31,8 +31,9 @@ body {
   min-width: 320px;
   min-height: 100%;
   max-width: 100%;
-  padding-top: 60px;
   position: relative;
+  padding: 0;
+  height: 100%;
 }
 
 h1 {

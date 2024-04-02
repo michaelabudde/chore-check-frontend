@@ -2,7 +2,7 @@
 
 .main {
   margin: 0;
-  padding-top: 132px; /* Adjust as needed */
+  padding-top: 230px; /* Adjust as needed */
   padding-bottom: 32px;
   width: 100vw;
   overflow: hidden;
@@ -12,7 +12,8 @@
   position: absolute;
   top: 0;
   left: 0; /* Position from the left edge of the viewport */
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  min-height: calc(100vh - 365px);
 }
 .main__catch {
   display: flex;
