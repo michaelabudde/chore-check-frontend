@@ -3,6 +3,8 @@ import cleaning_1 from "../../images/cleaning_1.png";
 import cleaning_2 from "../../images/cleaning_2.png";
 import author_image from "../../images/profilegreenmb.png";
 import Calendar from "../Calendar/Calendar";
+import ChoreList from "../Lists/ChoreList";
+import MemberList from "../Lists/MemberList";
 const Main = ({ handleClick }) => {
   //   const signedOutMain = (
   //    {/* move main_catch and main_how here*/}
@@ -66,17 +68,25 @@ const Main = ({ handleClick }) => {
     //   </div>
 
     <main className="main">
-      <div>
+      <div className="main__catch">
         <h1>Your Completed Chores This Week</h1>
         <p>Click the calendar to log a chore</p>
-        <Calendar />
-        <div className="main__calendar"></div>
+
+        <div className="main__calendar">
+          <Calendar />
+        </div>
         <h2> Your Chore List</h2>
+        <div className="main__list">
+          <ChoreList />
+        </div>
         <button>Add a Chore</button>
-        <div className="main__list"></div>
+
         <h2> Your Household Members</h2>
+        <div className="main__list">
+          <MemberList />
+        </div>
         <button>Add a Member</button>
-        <div className="main__list"></div>
+
         <img src={cleaning_2} alt="cleaning image" className="main__image" />
       </div>
       {/* always return about section */}

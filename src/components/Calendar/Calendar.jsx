@@ -8,10 +8,8 @@ const DAYS = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
 // create a chores const that will generate chores from db.json until backend set up.
 const CHORES = ["chore", "chore", "chore", "chore", "chore", "chore", "chore"];
 const Wrapper = styled.div`
-  width: 90%;
   border: 2px solid #9fbd84;
   border-radius: 30px;
-  margin: 15px;
 `;
 const HGrid = styled.div`
   display: grid;
@@ -76,7 +74,7 @@ const Calendar = ({ handleClick }) => {
   format(new Date(), "d/M");
   return (
     <>
-      <Wrapper className="calendar">
+      <Wrapper>
         <WeekWrapper cols={7}>
           {DAYS.map((day) => {
             const isDayToday = isToday(

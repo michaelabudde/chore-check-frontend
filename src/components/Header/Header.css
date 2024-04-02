@@ -5,7 +5,7 @@
   align-items: center; /* Align items vertically in the center */
   min-height: 60px;
   padding: 32px 52px 32px 52px;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100vw; /* Ensure the header takes full width */

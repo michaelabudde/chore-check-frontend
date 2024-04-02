@@ -2,22 +2,25 @@
 
 .main {
   margin: 0;
-  padding-top: 230px; /* Adjust as needed */
+  padding-top: 10px; /* Adjust as needed */
   padding-bottom: 32px;
   width: 100vw;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  position: absolute;
+  position: relative;
+  align-items: center;
+  justify-content: center;
   top: 0;
   left: 0; /* Position from the left edge of the viewport */
-  /* min-height: 100vh; */
-  min-height: calc(100vh - 365px);
+  min-height: 100vh;
 }
 .main__catch {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .main__button {
   border: none;
@@ -61,4 +64,6 @@
   padding: 10px;
 }
 .main__list {
+  width: 90vw;
+  padding: 10px;
 }
