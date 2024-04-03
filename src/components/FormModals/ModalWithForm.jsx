@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import useEsc from "../../hooks/useEsc";
 import { ResponseContext } from "../../contexts/ResponseContext";
-import Modal from "./Modal";
+import Modal from "../Modals/Modal";
 import "./ModalWithForm.css";
 
 const ModalWithForm = ({
