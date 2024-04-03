@@ -32,9 +32,6 @@ const PreviewModal = ({ selectedCard, onClose, onDeleteItem }) => {
           ></img>
           <div className="item-modal__footer">
             <p className="item-modal__item-name">{selectedCard.name}</p>
-            <div className="item-modal__weather-type">
-              Weather Type: {selectedCard.weather}
-            </div>
             <button
               type="button"
               className={itemDeleteButton}

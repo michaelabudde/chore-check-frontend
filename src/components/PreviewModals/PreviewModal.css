@@ -64,19 +64,7 @@
   margin-top: 20px;
   margin-left: 32px;
 }
-.item-modal__weather-type {
-  font-family: "CabinetGrotesk-Bold", Arial, sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.1;
-  margin-left: 32px;
-  margin-top: 12px;
-  margin-bottom: 32px;
-  position: absolute;
-  margin-top: 60px;
-  font-weight: 700;
-}
+
 .item-modal__delete-button {
   font-family: "CabinetGrotesk-Bold", Arial, sans-serif;
   color: red;

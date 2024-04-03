@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import "../ModalWithForm/ModalWithForm.css";
+import ModalWithForm from "./ModalWithForm";
+import "./ModalWithForm.css";
 import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 const AddMemberModal = ({ onClose, onAddItem, response, isLoading }) => {
   // isopen removed

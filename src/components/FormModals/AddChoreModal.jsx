@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import "../ModalWithForm/ModalWithForm.css";
+import ModalWithForm from "./ModalWithForm";
+import "./ModalWithForm.css";
 import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 const AddChoreModal = ({ onClose, onAddItem, response, isLoading }) => {
   // isopen removed
   const { values, handleChange, errors, resetForm } = useFormAndValidation();
   const formInfo = {
-    title: "New Garment",
+    title: "New Chore",
     name: "create",
-    buttonText: "Add garment",
+    buttonText: "Add chore",
   };
   function onSubmit(e) {
     e.preventDefault();
