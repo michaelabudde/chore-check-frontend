@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import useEsc from "../../hooks/useEsc";
-import { ResponseContext } from "../../contexts/ResponseContext";
+import { ResponseContext } from "../../contexts/ResponseContext.jsx";
 import Modal from "../Modals/Modal";
 import "./ModalWithForm.css";
 

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { addDays, format, isToday } from "date-fns";
-import { areDatesSame, addDateBy, getMonday } from "../../../utils.jsx";
+import { areDatesSame, addDateBy, getMonday } from "../../utils/utils.jsx";
 import DayGrid from "./DayGrid.jsx";
 import "./Calendar.css";
 const DAYS = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];

@@ -2,7 +2,7 @@ import "./PreviewModal.css";
 import Modal from "../Modals/Modal";
 
 import React, { useContext } from "react";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext.jsx";
 import "./ItemModal.css";
 
 const PreviewModal = ({ selectedCard, onClose, onDeleteItem }) => {

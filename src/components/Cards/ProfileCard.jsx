@@ -1,7 +1,7 @@
 import "./Card.css";
 import { React, useContext } from "react";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import { AuthContext } from "../../contexts/AuthContext";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext.jsx";
+import { AuthContext } from "../../contexts/AuthContext.jsx";
 import Card from "./Card";
 
 const ProfileCard = ({ item, onCardClick }) => {
