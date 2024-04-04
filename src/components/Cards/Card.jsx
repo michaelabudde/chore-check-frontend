@@ -1,24 +1,19 @@
-import "./Card.css";
-import { React, useContext } from "react";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext.jsx";
-import { AuthContext } from "../../contexts/AuthContext.jsx";
+import React from "react";
+import styled from "styled-components";
 
-const Card = ({ item, onCardClick }) => {
-  const { currentUser } = useContext(CurrentUserContext);
-  const { isLoggedIn } = useContext(AuthContext);
+const CardContainer = styled.div`
+  /* Common styles for all cards */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+`;
 
-  return (
-    <div className="card__element">
-      <div className="card__title-container">
-        <h2 className="card__name"> {item.name}</h2>
-      </div>
-      <img
-        src={item.imageUrl}
-        className="card__image"
-        onClick={() => onCardClick(item)}
-        alt={item.name}
-      />
-    </div>
-  );
+const Card = ({ card, onCardClick }) => {
+  return <CardContainer onClick={() => onCardClick(card)}></CardContainer>;
 };
+
 export default Card;
