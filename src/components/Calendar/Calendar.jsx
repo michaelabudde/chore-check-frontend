@@ -27,6 +27,7 @@ const WeekWrapper = styled.div`
   overflow: hidden;
   width: 100%;
   display: grid;
+  // background-color: #f1fde6;
   grid-template-columns: ${({ first }) => (first ? "auto" : "")} repeat(
       ${({ cols }) => cols},
       1fr
@@ -36,6 +37,10 @@ const DayWrapper = styled.span`
   background: ${({ isToday }) => (isToday ? "#FFF7E9" : "")};
   display: block;
   width: 100%; /* Set the width to 100% */
+  border-left: 2px solid #9fbd84;
+  &:first-child {
+    border-left: none; /* Remove border-left for the first column */
+  }
 `;
 const ChoreWrapper = styled.span`
   background: ${({ isToday }) => (isToday ? "#FFF7E9" : "")};
@@ -56,7 +61,7 @@ const FlexBox = styled.div`
   justify-content: space-between;
   font-size: 1.2rem;
   background: #f1fde6;
-  padding: 20px;
+  padding: 8px 24px;
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 30px;
   button {
@@ -65,6 +70,7 @@ const FlexBox = styled.div`
     align-items: center;
     border: 1px solid #9fbd84;
     border-radius: 20px;
+    padding: 2px 8px;
   }
 `;
 
