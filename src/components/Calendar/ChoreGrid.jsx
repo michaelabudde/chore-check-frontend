@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { addDays, isToday } from "date-fns";
+// import avatar from "../../images/greendefaultprofile.png";
 
 const CompletedChoreWrapper = styled.div`
   padding: 8px;
@@ -9,20 +10,21 @@ const CompletedChoreWrapper = styled.div`
 
 const CompletedChoreContent = styled.div`
   display: flex;
-  align-items: center;
-  gap: 10px;
+  flex-direction: column; /* Adjusted to column layout */
+  gap: 5px; /* Adjusted gap */
   padding: 8px;
   background-color: #9fbd84;
   border-radius: 8px;
-  height: 120px;
+  height: auto; /* Adjusted height */
   max-width: 100%;
   overflow: hidden;
 `;
 
 const CompletedChoreName = styled.p`
   margin-right: 8px;
-  font-size: 15px;
+  font-size: 20px;
   text-overflow: ellipsis;
+  overflow: hidden;
   white-space: nowrap;
   text-align: left;
   display: flex;
@@ -40,13 +42,21 @@ const CompletedChoreIcon = styled.div`
 
 const CompletedChoreMember = styled.p`
   margin-right: 8px;
-  font-size: 15px;
+  font-size: 20px;
   text-overflow: ellipsis;
+  overflow: hidden;
   white-space: nowrap;
   text-align: left;
   display: flex;
   flex-wrap: nowrap;
   max-width: 100%;
+`;
+const CompletedChoreAvatar = styled.div`
+  width: 20px;
+  height: 20px;
+  text-decoration: none;
+  object-fit: cover;
+  border-radius: 50%;
 `;
 
 const ChoreGridWrapper = styled.div`
@@ -63,6 +73,17 @@ const ChoreGridItem = styled.div`
   &:first-child {
     border-left: none; /* Remove border-left for the first column */
   }
+  text-overflow: ellipsis;
+  max-width: 100%;
+`;
+const ChoreRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  max-height: 32px;
+  text-overflow: ellipsis;
+  max-width: 100%;
 `;
 
 function ChoreGrid({ firstDayOfWeek }) {
@@ -73,17 +94,28 @@ function ChoreGrid({ firstDayOfWeek }) {
     // Fetch completed chores from your database
     // For now, I simulate some completed chores
     return [
-      { id: 1, name: "Clean Kitchen", icon: "🧹", dateCompleted: "2024-04-03" },
+      {
+        id: 1,
+        name: "Clean Kitchen",
+        icon: "🧹",
+        member: "Jas",
+        avatar: "👤",
+        dateCompleted: "2024-04-03",
+      },
       {
         id: 2,
-        name: "Vacuum Living Room Vacuum Living Room",
+        name: "Vacuum Living Room",
         icon: "🧹",
+        member: "Jas",
+        avatar: "👤",
         dateCompleted: "2024-04-02",
       },
       {
         id: 3,
-        name: "Vacuum bedroom",
+        name: "Vacuum Bedroom",
         icon: "🧹",
+        member: "Jas",
+        avatar: "👤",
         dateCompleted: "2024-04-02",
       },
     ];
@@ -105,7 +137,7 @@ function ChoreGrid({ firstDayOfWeek }) {
           <ChoreGridItem
             key={weekday}
             style={{
-              background: isCurrentDay ? "#FFF0D8" : "inherit", // Apply yellow background if it's the current day
+              background: isCurrentDay ? "#FFF7E9" : "inherit", // Apply yellow background if it's the current day
             }}
           >
             {completedChores
@@ -116,9 +148,18 @@ function ChoreGrid({ firstDayOfWeek }) {
               .map((chore) => (
                 <CompletedChoreWrapper key={chore.id}>
                   <CompletedChoreContent>
-                    <CompletedChoreIcon>{chore.icon}</CompletedChoreIcon>
-                    <CompletedChoreName>{chore.name}</CompletedChoreName>
-                    <CompletedChoreMember>{chore.member}</CompletedChoreMember>
+                    <ChoreRow>
+                      <CompletedChoreIcon>{chore.icon}</CompletedChoreIcon>
+                      <CompletedChoreName>{chore.name}</CompletedChoreName>
+                    </ChoreRow>
+                    <ChoreRow>
+                      <CompletedChoreAvatar>
+                        {chore.avatar}
+                      </CompletedChoreAvatar>
+                      <CompletedChoreMember>
+                        {chore.member}
+                      </CompletedChoreMember>
+                    </ChoreRow>
                   </CompletedChoreContent>
                 </CompletedChoreWrapper>
               ))}
