@@ -1,8 +1,6 @@
 import { addDays, format, isToday } from "date-fns";
 
-function DayGrid(props) {
-  const { firstDayOfWeek } = props;
-
+function DayGrid({ firstDayOfWeek }) {
   return (
     <div
       style={{

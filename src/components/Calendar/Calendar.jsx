@@ -1,23 +1,24 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { addDays, format, isToday } from "date-fns";
 import { areDatesSame, addDateBy, getMonday } from "../../utils/utils.jsx";
 import DayGrid from "./DayGrid.jsx";
-import "./Calendar.css";
+import ChoreGrid from "./ChoreGrid.jsx";
+import chevron_left from "../../images/chevron_left_icon.svg";
+import chevron_right from "../../images/chevron_right_icon.svg";
 const DAYS = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
 // create a chores const that will generate chores from db.json until backend set up.
-const CHORES = ["chore", "chore", "chore", "chore", "chore", "chore", "chore"];
 const Wrapper = styled.div`
   border: 2px solid #9fbd84;
   border-radius: 30px;
 `;
-const HGrid = styled.div`
-  display: grid;
-  grid-template-columns: ${({ first }) => (first ? "auto" : "")} repeat(
-      ${({ cols }) => cols},
-      1fr
-    );
-`;
+// const HGrid = styled.div`
+//   display: grid;
+//   grid-template-columns: ${({ first }) => (first ? "auto" : "")} repeat(
+//       ${({ cols }) => cols},
+//       1fr
+//     );
+// `;
 
 const WeekWrapper = styled.div`
   display: flex;
@@ -37,14 +38,19 @@ const DayWrapper = styled.span`
   width: 100%; /* Set the width to 100% */
 `;
 const ChoreWrapper = styled.span`
-  background: ${({ isToday }) => (isToday ? "#FFF0D8" : "")};
-
+  background: ${({ isToday }) => (isToday ? "#FFF7E9" : "")};
   border-top: 2px solid #9fbd84;
   border-left: 2px solid #9fbd84;
   &:first-child {
     border-left: none; /* Remove border-left for the first column in each row */
   }
+  // grid-template-columns: ${({ first }) => (first ? "auto" : "")} repeat(
+  //     ${({ cols }) => cols},
+  //     1fr
+  //   );
+  z-index: 50;
 `;
+
 const FlexBox = styled.div`
   display: flex;
   justify-content: space-between;
@@ -61,17 +67,13 @@ const FlexBox = styled.div`
     border-radius: 20px;
   }
 `;
-function getWeekDay(Date = new Date(), offset = 1) {
-  return (Date.getDay() - offset + 7) % 7;
-}
-const Calendar = ({ handleClick }) => {
+
+const Calendar = () => {
   const [mondayDate, setMondayDate] = useState(getMonday());
   const nextWeek = () => setMondayDate(addDateBy(mondayDate, 7));
   const prevWeek = () => setMondayDate(addDateBy(mondayDate, -7));
-  const weekOffset = 0;
-  const today = addDays(new Date(), weekOffset * 7);
   const firstDayOfWeek = addDays(mondayDate, 0);
-  format(new Date(), "d/M");
+
   return (
     <>
       <Wrapper>
@@ -91,19 +93,14 @@ const Calendar = ({ handleClick }) => {
 
         <DayGrid firstDayOfWeek={firstDayOfWeek} />
 
-        <HGrid cols={7}>
-          {CHORES.map((chores) => (
-            <ChoreWrapper>
-              <p>{chores}</p>
-            </ChoreWrapper>
-          ))}
-        </HGrid>
+        <ChoreGrid firstDayOfWeek={firstDayOfWeek} />
+
         <FlexBox>
           <button onClick={prevWeek}>
-            <ion-icon name="chevron-back-outline"></ion-icon>
+            <img src={chevron_left} alt="Left Arrow"></img>
           </button>
           <button onClick={nextWeek}>
-            <ion-icon name="chevron-forward-outline"></ion-icon>
+            <img src={chevron_right} alt="Right Arrow"></img>
           </button>
         </FlexBox>
       </Wrapper>
