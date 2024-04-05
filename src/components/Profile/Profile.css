@@ -1,6 +1,18 @@
 .profile {
-  width: 90vw;
-  padding: 10px;
+  margin: 0;
+  padding-top: 10px; /* Adjust as needed */
+  padding-bottom: 32px;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0; /* Position from the left edge of the viewport */
+  min-height: 100vh;
 }
 .profile__list {
   width: 90vw;
