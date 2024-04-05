@@ -70,22 +70,17 @@ const Main = ({ handleClick }) => {
     <main className="main">
       <div className="main__catch">
         <h1>Your Completed Chores This Week</h1>
-        <p>Click the calendar to log a chore</p>
-
+        <button className="main__button">Log a Chore</button>
         <div className="main__calendar">
           <Calendar />
         </div>
         <h2> Your Chore List</h2>
-
+        <button className="main__button">Add a Chore</button>
         <ChoreList />
 
-        <button className="main__button">Add a Chore</button>
-
         <h2> Your Household Members</h2>
-
-        <MemberList />
-
         <button className="main__button">Add a Member</button>
+        <MemberList />
 
         <img src={cleaning_2} alt="cleaning image" className="main__image" />
       </div>
