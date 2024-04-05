@@ -24,6 +24,8 @@ const ChoreGridItem = styled.div`
   }
   text-overflow: ellipsis;
   max-width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 `;
 export const getCompletedChores = () => {
   // Fetch completed chores from your database

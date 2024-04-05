@@ -23,17 +23,22 @@
   justify-content: center;
 }
 .main__button {
-  border: none;
+  padding: 20px;
+  border-radius: 30px;
+  margin: 30px;
+  background: #f1fde6;
+  /* border: none;
   padding: 5px 20px 5px 20px;
   background-color: #fff;
   color: #000;
   line-height: 1.2;
   cursor: pointer;
   transition: opacity 0.5s ease-in-out;
-  width: 174px;
+  width: 174px; */
 }
 .main__image {
   width: 80vw;
+  padding-top: 20px;
 }
 .main__how {
   display: flex;
@@ -60,10 +65,6 @@
 
 /* Signed In Main*/
 .main__calendar {
-  width: 90vw;
-  padding: 10px;
-}
-.main__list {
   width: 90vw;
   padding: 10px;
 }

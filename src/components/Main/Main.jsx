@@ -76,16 +76,16 @@ const Main = ({ handleClick }) => {
           <Calendar />
         </div>
         <h2> Your Chore List</h2>
-        <div className="main__list">
-          <ChoreList />
-        </div>
-        <button>Add a Chore</button>
+
+        <ChoreList />
+
+        <button className="main__button">Add a Chore</button>
 
         <h2> Your Household Members</h2>
-        <div className="main__list">
-          <MemberList />
-        </div>
-        <button>Add a Member</button>
+
+        <MemberList />
+
+        <button className="main__button">Add a Member</button>
 
         <img src={cleaning_2} alt="cleaning image" className="main__image" />
       </div>

@@ -68,7 +68,7 @@ const FlexBox = styled.div`
     font-size: 1.2rem;
     display: flex;
     align-items: center;
-    border: 1px solid #9fbd84;
+    border: 2px solid #9fbd84;
     border-radius: 20px;
     padding: 2px 8px;
   }

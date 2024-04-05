@@ -11,8 +11,9 @@ function DayGrid({ firstDayOfWeek }) {
         boxShadow: "0 8px 16px #CBE1B7",
         background: "white",
         zIndex: 30,
-        gridColumn: "span 2",
-        border: "2px solid #9fbd84",
+        alignContent: "center",
+        // gridColumn: "span 2",
+        borderTop: "2px solid #9fbd84",
       }}
     >
       {Array.from({ length: 7 }).map((_, weekday) => {
