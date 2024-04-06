@@ -8,11 +8,11 @@ const Card = styled.div`
   // border: 2px solid #9fbd84;
   background: #d3dbf4;
   border-radius: 30px;
-  padding-top: 10px;
+  padding-top: 30px;
   padding-bottom: 10px;
-  width: 90vw;
+  width: 30vw;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 24px;
   flex-wrap: wrap;
   justify-content: center;
@@ -31,24 +31,43 @@ const MemberAvatar = styled.div`
   align-content: center;
   align-items: center;
 `;
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  max-height: 32px;
+  text-overflow: ellipsis;
+  max-width: 100%;
+`;
+const Button = styled.button`
+  padding: 16px;
+  border-radius: 30px;
+  margin-bottom: 30px;
+  background: #e0f1d0;
+`;
 // import curent user from backend
 // const username = currentUser ? currentUser.name : "Terrence Tegegne";
 const username = "Dana Adisa";
+const housename = "The Adisa House";
 const ProfileCard = ({ item, onCardClick }) => {
   // const { currentUser } = useContext(CurrentUserContext);
   // const { isLoggedIn } = useContext(AuthContext);
 
   return (
     <Card>
-      <MemberAvatar>
-        {" "}
-        <img
-          className="nav_avatar"
-          src={default_profile_icon} // default avatar
-          alt="default user avatar"
-        />
-      </MemberAvatar>
-      <h2>{username}</h2>
+      <Row>
+        <MemberAvatar>
+          <img
+            className="nav_avatar"
+            src={default_profile_icon} // default avatar
+            alt="default user avatar"
+          />
+        </MemberAvatar>
+        <h2>{username}</h2>
+      </Row>
+      <p>{housename}</p>
+      <Button>Edit Profile</Button>
     </Card>
   );
 };

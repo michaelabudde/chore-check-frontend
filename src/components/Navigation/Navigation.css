@@ -43,9 +43,9 @@
 
 .nav_dropdown {
   position: absolute;
-  top: calc(100% + 10px); /* Position it below the avatar */
-  right: 20px;
-  background-color: #fff7e9;
+  top: calc(100% + -30px);
+  right: calc(100% + -60px);
+  background-color: #e0f1d0;
   border-radius: 30px;
   padding: 10px 20px;
   width: 200px;
@@ -78,6 +78,7 @@
 .nav_username {
   text-decoration: none;
   text-align: center;
+  font-size: 30px;
 }
 
 .nav_dropdown_item {

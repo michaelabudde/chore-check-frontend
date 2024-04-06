@@ -13,6 +13,13 @@ function App() {
   const handleNavBar = useCallback(() => {
     setOpen(!open);
   }, []);
+  const [activeModal, setActiveModal] = useState(null);
+  const handleCloseModal = useCallback(() => {
+    setActiveModal(null);
+  }, []);
+  const handleOpenModal = useCallback((modalName) => {
+    setActiveModal(modalName);
+  }, []);
   return (
     <div className="page">
       <div className="page_wrapper">

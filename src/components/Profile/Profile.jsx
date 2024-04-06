@@ -6,18 +6,24 @@ import ProfileCard from "../Cards/ProfileCard";
 const Profile = ({ handleClick }) => {
   return (
     <div className="profile">
-      <div>
+      <div className="sidebar">
         <ProfileCard />
       </div>
-      <h2> Your Chore List</h2>
-
-      <div className="profile__list">
-        <ChoreList />
-      </div>
-      <h2> Your Household Members</h2>
-
-      <div className="profile__list">
-        <MemberList />
+      <div className="profile-content">
+        <div className="profile__heading">
+          <h2> Your Chore List</h2>
+          <button className="profile__button">Add a Chore</button>
+        </div>
+        <div className="profile__list">
+          <ChoreList />
+        </div>
+        <div className="profile__heading">
+          <h2> Your Household Members</h2>
+          <button className="profile__button">Add a Member</button>
+        </div>
+        <div className="profile__list">
+          <MemberList />
+        </div>
       </div>
     </div>
   );
