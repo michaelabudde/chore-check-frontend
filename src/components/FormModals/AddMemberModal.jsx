@@ -2,18 +2,18 @@ import React, { useEffect } from "react";
 import ModalWithForm from "./ModalWithForm";
 import "./ModalWithForm.css";
 import { useFormAndValidation } from "../../hooks/useFormAndValidation";
-const AddMemberModal = ({ onClose, onAddItem, response, isLoading }) => {
+const AddMemberModal = ({ onClose, onAddMember, response, isLoading }) => {
   // isopen removed
   const { values, handleChange, errors, resetForm } = useFormAndValidation();
   const formInfo = {
-    title: "New Garment",
-    name: "create",
-    buttonText: "Add garment",
+    title: "New Member",
+    name: "addMember",
+    buttonText: "Add Member",
   };
   function onSubmit(e) {
     e.preventDefault();
-    const newItem = { ...values };
-    onAddItem(newItem);
+    const newMember = { ...values };
+    onAddMember(newMember);
   }
 
   useEffect(() => {

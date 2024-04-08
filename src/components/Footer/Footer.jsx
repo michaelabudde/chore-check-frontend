@@ -2,7 +2,7 @@ import "./Footer.css";
 import { Link } from "react-router-dom";
 
 import chorechecklogo from "../../images/greenCClogo.svg";
-const Footer = ({ handleClick }) => {
+const Footer = ({ openModal }) => {
   return (
     <footer className="footer">
       <div className="footer__logo_container">

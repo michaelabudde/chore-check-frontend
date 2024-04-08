@@ -1,12 +1,13 @@
-import "../ModalWithForm/ModalWithForm.css";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import "./ModalWithForm.css";
+import ModalWithForm from "./ModalWithForm";
+import "./ModalWithForm.css";
 import { useEffect } from "react";
 import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 
 const SigninModal = ({
   onClose,
   handleLogIn,
-  handleClick,
+  openModal,
   loginError,
   isLoading,
 }) => {
@@ -18,17 +19,6 @@ const SigninModal = ({
     name: "login",
     buttonText: "Log in",
   };
-
-  const extraButton = [
-    {
-      text: "or Sign up",
-      onClick: () => {
-        handleClick("signup");
-      },
-      type: "submit",
-      disabled: false,
-    },
-  ];
 
   function onSubmit(e) {
     e.preventDefault();
@@ -45,7 +35,6 @@ const SigninModal = ({
       formInfo={formInfo}
       onClose={onClose}
       onSubmit={onSubmit}
-      extraButton={extraButton}
       isLoading={isLoading}
       modalName="login"
     >

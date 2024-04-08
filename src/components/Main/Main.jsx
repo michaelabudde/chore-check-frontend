@@ -1,11 +1,13 @@
 import "./Main.css";
+import useEsc from "../../hooks/useEsc";
+import useClickOutside from "../../hooks/useClickOutside";
 import cleaning_1 from "../../images/cleaning_1.png";
 import cleaning_2 from "../../images/cleaning_2.png";
 import author_image from "../../images/profilegreenmb.png";
 import Calendar from "../Calendar/Calendar";
 import ChoreList from "../Lists/ChoreList";
 import MemberList from "../Lists/MemberList";
-const Main = ({ handleClick }) => {
+const Main = ({ openModal }) => {
   //   const signedOutMain = (
   //    {/* move main_catch and main_how here*/}
   //   <div className="main__catch">
@@ -70,16 +72,22 @@ const Main = ({ handleClick }) => {
     <main className="main">
       <div className="main__catch">
         <h1>Your Completed Chores This Week</h1>
-        <button className="main__button">Log a Chore</button>
+        <button className="main__button" onClick={() => openModal("logChore")}>
+          Log a Chore
+        </button>
         <div className="main__calendar">
           <Calendar />
         </div>
         <h2> Your Chore List</h2>
-        <button className="main__button">Add a Chore</button>
+        <button className="main__button" onClick={() => openModal("addChore")}>
+          Add a Chore
+        </button>
         <ChoreList />
 
         <h2> Your Household Members</h2>
-        <button className="main__button">Add a Member</button>
+        <button className="main__button" onClick={() => openModal("addMember")}>
+          Add a Member
+        </button>
         <MemberList />
 
         <img src={cleaning_2} alt="cleaning image" className="main__image" />
@@ -95,14 +103,13 @@ const Main = ({ handleClick }) => {
         </div>
         <div className="main__about_text">
           <h1> About the author</h1>
-          <p>
+          <p className="main_p">
             I am Michaela Budde. I am a full-stack software engineer, graduating
             from TripleTen Software Engineer program. I am passionate about
             community building and justice for people and the environment. I
             hope to use my technological skills towards positive solutions.{" "}
           </p>
-          <p>
-            {" "}
+          <p className="main_p">
             Chore Check was created as a solution to a common area of conflict
             in households. By having a digital tracker it is easier to ensure
             fairness among members of the house.

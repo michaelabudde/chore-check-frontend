@@ -5,7 +5,7 @@ import "./Header.css";
 import Navigation from "../Navigation/Navigation";
 import chorechecktitle from "../../images/greenCCtitle.svg";
 
-const Header = ({ handleClick, handleNavBar }) => {
+const Header = ({ isOpen, openModal, toggleModal }) => {
   return (
     <header className="header">
       <div>
@@ -17,7 +17,11 @@ const Header = ({ handleClick, handleNavBar }) => {
           />
         </Link>
       </div>
-      <Navigation handleClick={handleClick} handleNavBar={handleNavBar} />
+      <Navigation
+        isOpen={isOpen}
+        toggleModal={toggleModal}
+        openModal={openModal}
+      />
     </header>
   );
 };

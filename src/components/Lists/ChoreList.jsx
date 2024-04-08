@@ -1,6 +1,7 @@
 import List from "./List";
 import "./List.css";
 import { useState, useEffect } from "react";
+import { fetchedChores } from "../../utils/constants.jsx";
 
 import ChoreCard from "../Cards/ChoreCard"; // Import ChoreCard component
 // import userChoresArray from "./userChoresArray"; // Import userChoresArray if defined
@@ -10,34 +11,13 @@ import ChoreCard from "../Cards/ChoreCard"; // Import ChoreCard component
 // <p className="list__pretext">Chores will show up here...</p>
 
 // completed list
-const ChoreList = ({ handleClick }) => {
+const ChoreList = ({ openModal }) => {
   const [userChoresArray, setUserChoresArray] = useState([]);
 
   useEffect(() => {
     // Simulated data fetching logic
     // Replace this with your actual data fetching logic
-    const fetchedChores = [
-      {
-        id: 1,
-        name: "Clean Kitchen",
-        icon: "🧽",
-      },
-      {
-        id: 2,
-        name: "Laundry",
-        icon: "🧺",
-      },
-      {
-        id: 3,
-        name: "Sweep Bedroom",
-        icon: "🧹",
-      },
-      {
-        id: 4,
-        name: "Clean Bathroom",
-        icon: "🛁",
-      },
-    ];
+    fetchedChores;
 
     setUserChoresArray(fetchedChores);
   }, []); // Empty dependency array to run the effect only once
@@ -46,7 +26,7 @@ const ChoreList = ({ handleClick }) => {
     <List>
       <ul className="list">
         {userChoresArray.map((chore) => (
-          <ChoreCard key={chore.id} chore={chore} onCardClick={handleClick} />
+          <ChoreCard key={chore.id} chore={chore} onCardClick={openModal} />
         ))}
       </ul>
     </List>

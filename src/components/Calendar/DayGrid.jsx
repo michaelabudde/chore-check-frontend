@@ -10,7 +10,7 @@ function DayGrid({ firstDayOfWeek }) {
         gridTemplateColumns: `repeat(7, 1fr)`,
         boxShadow: "0 8px 16px #CBE1B7",
         background: "white",
-        zIndex: 30,
+        zIndex: 10,
         alignContent: "center",
         // gridColumn: "span 2",
         borderTop: "2px solid #9fbd84",

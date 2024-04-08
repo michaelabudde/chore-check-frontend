@@ -67,7 +67,7 @@ const ProfileCard = ({ item, onCardClick }) => {
         <h2>{username}</h2>
       </Row>
       <p>{housename}</p>
-      <Button>Edit Profile</Button>
+      <Button onClick={() => handleClick("editProfile")}>Edit Profile</Button>
     </Card>
   );
 };

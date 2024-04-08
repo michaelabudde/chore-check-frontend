@@ -42,19 +42,19 @@ const DayWrapper = styled.span`
     border-left: none; /* Remove border-left for the first column */
   }
 `;
-const ChoreWrapper = styled.span`
-  background: ${({ isToday }) => (isToday ? "#FFF7E9" : "")};
-  border-top: 2px solid #9fbd84;
-  border-left: 2px solid #9fbd84;
-  &:first-child {
-    border-left: none; /* Remove border-left for the first column in each row */
-  }
-  // grid-template-columns: ${({ first }) => (first ? "auto" : "")} repeat(
-  //     ${({ cols }) => cols},
-  //     1fr
-  //   );
-  z-index: 50;
-`;
+// const ChoreWrapper = styled.span`
+//   background: ${({ isToday }) => (isToday ? "#FFF7E9" : "")};
+//   border-top: 2px solid #9fbd84;
+//   border-left: 2px solid #9fbd84;
+//   &:first-child {
+//     border-left: none; /* Remove border-left for the first column in each row */
+//   }
+//   // grid-template-columns: ${({ first }) => (first ? "auto" : "")} repeat(
+//   //     ${({ cols }) => cols},
+//   //     1fr
+//   //   );
+//   z-index: 50;
+// `;
 
 const FlexBox = styled.div`
   display: flex;
@@ -71,6 +71,7 @@ const FlexBox = styled.div`
     border: 2px solid #9fbd84;
     border-radius: 20px;
     padding: 2px 8px;
+    margin: 0;
   }
 `;
 

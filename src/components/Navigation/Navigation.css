@@ -54,6 +54,14 @@
   visibility: hidden; /* Initially hidden */
   transition: opacity 0.3s ease, visibility 0.3s ease; /* Add transition */
 }
+.nav__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 98;
+}
 
 .nav_dropdown.active {
   opacity: 1;

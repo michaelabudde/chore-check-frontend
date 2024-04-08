@@ -1,5 +1,6 @@
-import React, { useContext, useState } from "react";
-
+import React, { useContext, useState, useRef } from "react";
+import useEsc from "../../hooks/useEsc";
+import useClickOutside from "../../hooks/useClickOutside";
 import "./Navigation.css";
 
 // import { CurrentUserContext } from "../../contexts/CurrentUserContext";
@@ -12,8 +13,28 @@ function DropdownItem(props) {
     </li>
   );
 }
-const Navigation = ({ handleClick, handleNavBar }) => {
+
+const Navigation = ({ isOpen, openModal, toggleMenu }) => {
   const [open, setOpen] = useState(false);
+  const dropdownRef = useRef(null); // Ref for dropdown menu container
+
+  useClickOutside(dropdownRef, () => setOpen(false)); // Use the custom hook
+
+  const handleToggleMenu = () => {
+    setOpen(!open);
+    // toggleMenu(); // Toggle the main menu in App.js
+  };
+  useEsc(handleToggleMenu);
+  const handleItemClick = () => {
+    setOpen(false);
+    openModal();
+  };
+  // const [open, setOpen] = useState(false);
+
+  // const handleNavBar = () => {
+  //   setOpen(!open);
+  //   toggleMenu(); // Toggle the main menu in App.js
+  // };
   // const { currentUser } = useContext(CurrentUserContext);
   // const { isSignedIn } = useContext(AuthContext);
 
@@ -25,13 +46,13 @@ const Navigation = ({ handleClick, handleNavBar }) => {
   //   <>
   //     <button
   //       className="nav_button"
-  //       onClick={() => handleClick("signup")}
+  //       onClick={() => openModal("signup")}
   //     >
   //       Sign Up
   //     </button>
   //     <button
   //       className="nav_button"
-  //       onClick={() => handleClick("login")}
+  //       onClick={() => openModal("login")}
   //     >
   //       Log In
   //     </button>
@@ -74,13 +95,13 @@ const Navigation = ({ handleClick, handleNavBar }) => {
       {/* <>
         <button
           className="nav_button"
-          onClick={() => handleClick("signup")}
+          onClick={() => openModal("signup")}
         >
           Sign Up
         </button>
         <button
           className="nav_button"
-          onClick={() => handleClick("login")}
+          onClick={() => openModal("login")}
         >
           Log In
         </button>
@@ -89,12 +110,7 @@ const Navigation = ({ handleClick, handleNavBar }) => {
       {/*Signed In Header*/}
       <div className="nav_signedin">
         <div className="nav_container">
-          <div
-            className="nav_trigger"
-            onClick={() => {
-              setOpen(!open);
-            }}
-          >
+          <div className="nav_trigger" onClick={handleToggleMenu}>
             <img
               className="nav_avatar"
               src={default_profile_icon} // default avatar
@@ -102,12 +118,27 @@ const Navigation = ({ handleClick, handleNavBar }) => {
             />
           </div>
 
-          <div className={`nav_dropdown ${open ? "active" : "inactive"}`}>
+          <div
+            ref={dropdownRef}
+            className={`nav_dropdown ${open || isOpen ? "active" : "inactive"}`}
+          >
+            <div className="nav__overlay" onClick={handleToggleMenu} />
             <ul>
               <h2 className="nav_username">User Name</h2>
-              <DropdownItem text={"My Profile"} to="/profile" />
-              <DropdownItem text={"Edit Profile"} to="/profile" />
-              <DropdownItem text={"Log Out"} to="/profile" />
+              <DropdownItem
+                text={"My Profile"}
+                to="/profile"
+                onClick={() => handleItemClick("")}
+              />
+              <DropdownItem
+                text={"Edit Profile"}
+                to="/profile"
+                onClick={() => handleItemClick("")}
+              />
+              <DropdownItem
+                text={"Log Out"}
+                onClick={() => handleItemClick("")}
+              />
             </ul>
           </div>
         </div>

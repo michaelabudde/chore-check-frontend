@@ -1,12 +1,8 @@
 .modal-form__title {
-  font-family: "CabinetGrotesk-Bold", Arial, sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
+  font-size: 24px;
   line-height: 1.1;
   max-width: 440px;
   margin: 0px;
-
   color: #000;
 }
 .modal-form__form {
@@ -28,10 +24,7 @@
   display: flex;
   align-items: flex-start;
   color: #000;
-  font-family: "CabinetGrotesk-Bold", Arial, sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
+  font-size: 22px;
   line-height: 1.1;
   padding-bottom: 10px;
   padding-top: 10px;
@@ -39,6 +32,9 @@
   align-content: flex-start;
   flex-wrap: wrap;
   cursor: pointer;
+}
+.modal-form__option {
+  font-size: 20;
 }
 .modal-form__error {
   color: red;
@@ -68,7 +64,6 @@
   margin-bottom: 5px;
 }
 
-
 .modal-form__submit-button:hover {
   opacity: 0.6;
 }
@@ -83,31 +78,8 @@
   align-items: center;
 }
 .modal-form__submit-button {
-  width: 124px;
-  height: 36px;
-  color: #fff;
-  font-family: "CabinetGrotesk-Bold", Arial, sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.1;
-  border-radius: 4px;
-  background-color: #000;
-  border: 1px;
-  padding: 0;
-  cursor: pointer;
-  transition: opacity 0.5s ease-in-out;
-  position: relative;
-}
-.modal-form__extra-button {
-  color: rgba(0, 0, 0, 0.5);
-  font-size: 16px;
-  font-family: "Cabinet Grotesk Bold", Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  line-height: 20px;
-  cursor: pointer;
-  border: none;
-  background: none;
-  width: auto;
-  height: auto;
+  padding: 16px;
+  border-radius: 30px;
+  margin-bottom: 30px;
+  background: #d3dbf4;
 }
