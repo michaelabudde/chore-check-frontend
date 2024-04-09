@@ -12,10 +12,9 @@ const Modal = ({
   formInfo,
 }) => {
   const modalRef = useRef(null);
-
   useEsc(closeModal);
-
   useClickOutside(modalRef, closeModal);
+  console.log(formInfo);
   return (
     <>
       {isOpen && (

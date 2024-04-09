@@ -8,67 +8,7 @@ import Calendar from "../Calendar/Calendar";
 import ChoreList from "../Lists/ChoreList";
 import MemberList from "../Lists/MemberList";
 const Main = ({ openModal }) => {
-  //   const signedOutMain = (
-  //    {/* move main_catch and main_how here*/}
-  //   <div className="main__catch">
-  //     <h1>Need Some Help Managing Chores?</h1>
-  //     <h2>Digitally track chores in any household.</h2>
-  //     <button className="main__button">Sign up here</button>
-  //     <img src={cleaning_1} alt="cleaning image" className="main__image" />
-  //     <p>Family homes and Co-ops can be hard to manage.</p>
-  //     <h2>Chore Check is an easy solution to tracking chores</h2>
-  //   </div>
-  //   <div className="main__how">
-  //     <h1>How it works</h1>
-  //     <p>
-  //       Users can create a chore list and add their household members. Then
-  //       when a chore is completed it is signed in a calendar like this.
-  //     </p>
-  //     {/* calendar placeholder*/}
-  //     <img src={cleaning_2} alt="cleaning image" className="main__image" />
-  //   </div>
-  //   <div className="main__about">
-  //     <div className="main__about_image">
-  //       <img
-  //         src={author_image}
-  //         alt="author image"
-  //         className="main__about_image"
-  //       />
-  //     </div>
-  //   );
-  // const signedInMain = (
-  //   <div className="main">
-  //     <div className="main__calendar"></div>
-  //     <h2> Your Chore List</h2>
-  //     <div className="main__list"></div>
-  //     <h2> Your Household Members</h2>
-  //     <div className="main__list"></div>
-  //     <img src={cleaning_2} alt="cleaning image" className="main__image" />
-  //   </div>
-  // );
-
   return (
-    // {/* {isSignedIn ? signedInMain : signedOutMain} */}
-
-    // <main className="main">
-    //   <div className="main__catch">
-    //     <h1>Need Some Help Managing Chores?</h1>
-    //     <h2>Digitally track chores in any household.</h2>
-    //     <button className="main__button">Sign up here</button>
-    //     <img src={cleaning_1} alt="cleaning image" className="main__image" />
-    //     <p>Family homes and Co-ops can be hard to manage.</p>
-    //     <h2>Chore Check is an easy solution to tracking chores</h2>
-    //   </div>
-    //   <div className="main__how">
-    //     <h1>How it works</h1>
-    //     <p>
-    //       Users can create a chore list and add their household members. Then
-    //       when a chore is completed it is signed in a calendar like this.
-    //     </p>
-    //     {/* calendar placeholder*/}
-    //     <img src={cleaning_2} alt="cleaning image" className="main__image" />
-    //   </div>
-
     <main className="main">
       <div className="main__catch">
         <h1>Your Completed Chores This Week</h1>
@@ -120,3 +60,63 @@ const Main = ({ openModal }) => {
   );
 };
 export default Main;
+
+//   const signedOutMain = (
+//    {/* move main_catch and main_how here*/}
+//   <div className="main__catch">
+//     <h1>Need Some Help Managing Chores?</h1>
+//     <h2>Digitally track chores in any household.</h2>
+//     <button className="main__button">Sign up here</button>
+//     <img src={cleaning_1} alt="cleaning image" className="main__image" />
+//     <p>Family homes and Co-ops can be hard to manage.</p>
+//     <h2>Chore Check is an easy solution to tracking chores</h2>
+//   </div>
+//   <div className="main__how">
+//     <h1>How it works</h1>
+//     <p>
+//       Users can create a chore list and add their household members. Then
+//       when a chore is completed it is signed in a calendar like this.
+//     </p>
+//     {/* calendar placeholder*/}
+//     <img src={cleaning_2} alt="cleaning image" className="main__image" />
+//   </div>
+//   <div className="main__about">
+//     <div className="main__about_image">
+//       <img
+//         src={author_image}
+//         alt="author image"
+//         className="main__about_image"
+//       />
+//     </div>
+//   );
+// const signedInMain = (
+//   <div className="main">
+//     <div className="main__calendar"></div>
+//     <h2> Your Chore List</h2>
+//     <div className="main__list"></div>
+//     <h2> Your Household Members</h2>
+//     <div className="main__list"></div>
+//     <img src={cleaning_2} alt="cleaning image" className="main__image" />
+//   </div>
+// );
+
+// {/* {isSignedIn ? signedInMain : signedOutMain} */}
+
+// <main className="main">
+//   <div className="main__catch">
+//     <h1>Need Some Help Managing Chores?</h1>
+//     <h2>Digitally track chores in any household.</h2>
+//     <button className="main__button">Sign up here</button>
+//     <img src={cleaning_1} alt="cleaning image" className="main__image" />
+//     <p>Family homes and Co-ops can be hard to manage.</p>
+//     <h2>Chore Check is an easy solution to tracking chores</h2>
+//   </div>
+//   <div className="main__how">
+//     <h1>How it works</h1>
+//     <p>
+//       Users can create a chore list and add their household members. Then
+//       when a chore is completed it is signed in a calendar like this.
+//     </p>
+//     {/* calendar placeholder*/}
+//     <img src={cleaning_2} alt="cleaning image" className="main__image" />
+//   </div>

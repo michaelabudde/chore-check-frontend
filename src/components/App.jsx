@@ -7,6 +7,7 @@ import Main from "../components/Main/Main";
 import Footer from "../components/Footer/Footer";
 import Profile from "../components/Profile/Profile";
 import Modal from "../components/Modals/Modal.jsx";
+import ModalWithForm from "./FormModals/ModalWithForm.jsx";
 
 // From Modals
 import LogChoreModal from "./FormModals/LogChoreModal";
@@ -25,10 +26,10 @@ function App() {
 
   // NavDropDown and Modal  functions
   const [isModalOpen, setModalOpen] = useState(false);
+  const [activeModal, setActiveModal] = useState(null);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const ref = useRef();
 
-  const [activeModal, setActiveModal] = useState(null);
   const handleCloseModal = useCallback(() => {
     setModalOpen(false);
     setActiveModal(null);
@@ -61,12 +62,18 @@ function App() {
           />
         </Routes>
         <Modal isOpen={isModalOpen} closeModal={handleCloseModal}></Modal>
+        <ModalWithForm
+          isOpen={isModalOpen}
+          closeModal={handleCloseModal}
+        ></ModalWithForm>
 
         {activeModal === "logChore" && (
           <LogChoreModal
-          // errorResponse={errorResponse}
-          // isLoading={isLoading}
-          // onLogChore={handleAddItemSubmit}
+            isOpen={isModalOpen}
+
+            // errorResponse={errorResponse}
+            // isLoading={isLoading}
+            // onLogChore={handleAddItemSubmit}
           />
         )}
         {activeModal === "signup" && (

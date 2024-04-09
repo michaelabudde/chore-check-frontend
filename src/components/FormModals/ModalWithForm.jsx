@@ -11,39 +11,45 @@ const ModalWithForm = ({
   onSubmit,
   isLoading,
   formInfo,
+  isOpen,
 }) => {
   const modalRef = useRef(null);
 
   useEsc(closeModal);
   useClickOutside(modalRef, closeModal);
   // const { response } = useContext(ResponseContext);
-
+  console.log(formInfo);
   return (
-    <Modal>
-      <div ref={modalRef}>
-        <h1 className="modal-form__title">{formInfo.title}</h1>
-        <div className="modal-form__label-container">
-          <label className="modal-form__label"></label>
-          <span className="modal-form__error modal__server-error">
-            {/* {response || ""} */}
-          </span>
-        </div>
+    <>
+      {isOpen && (
+        <Modal>
+          <div ref={modalRef}>
+            <h1 className="modal-form__title">{formInfo.title}</h1>
+            <div className="modal-form__label-container">
+              <label className="modal-form__label"></label>
+              <span className="modal-form__error modal__server-error">
+                {/* {response || ""} */}
+              </span>
+            </div>
 
-        <form
-          onSubmit={onSubmit}
-          className="modal-form__inputs-container"
-          name={`${formInfo.name}-form`}
-        >
-          {children}
+            <form
+              onSubmit={onSubmit}
+              className="modal-form__inputs-container"
+              name={`${formInfo.name}-form`}
+            >
+              {children}
 
-          <div className="modal-form__button-wrapper">
-            <button type="submit" className="modal-form__submit-button">
-              {isLoading ? "Saving..." : formInfo.buttonText}
-            </button>
+              <div className="modal-form__button-wrapper">
+                <button type="submit" className="modal-form__submit-button">
+                  {isLoading ? "Saving..." : formInfo.buttonText}
+                </button>
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
-    </Modal>
+        </Modal>
+      )}
+      ;
+    </>
   );
 };
 
