@@ -5,7 +5,7 @@ import ModalWithForm from "./ModalWithForm";
 import "./ModalWithForm.css";
 import { fetchedChores, fetchedMembers } from "../../utils/constants.jsx";
 
-const LogChoreModal = ({ chores, members, onLogChore, addItem, setArray }) => {
+const LogChoreModal = ({ onLogChore, addItem, setArray }) => {
   const formInfo = {
     title: "Log Chore",
     name: "logChore",
@@ -13,8 +13,6 @@ const LogChoreModal = ({ chores, members, onLogChore, addItem, setArray }) => {
   };
   const [selectedChore, setSelectedChore] = useState("");
   const [selectedMember, setSelectedMember] = useState("");
-  // const token = "your_token_here"; // Assuming you have a token
-  // const newItem = { name: "New Item" }; // Example new item
 
   const handleChoreChange = (e) => {
     setSelectedChore(e.target.value);
@@ -32,7 +30,6 @@ const LogChoreModal = ({ chores, members, onLogChore, addItem, setArray }) => {
       setSelectedMember("");
     }
   };
-  // onLogChore(token, newItem, addItem, setArray);
 
   return (
     <ModalWithForm formInfo={formInfo} modalName="logChore">
@@ -73,3 +70,8 @@ const LogChoreModal = ({ chores, members, onLogChore, addItem, setArray }) => {
 };
 
 export default LogChoreModal;
+
+// const token = "your_token_here"; // Assuming you have a token
+// const newItem = { name: "New Item" }; // Example new item
+
+// onLogChore(token, newItem, addItem, setArray);

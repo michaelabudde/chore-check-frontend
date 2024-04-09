@@ -42,6 +42,7 @@
 }
 
 .nav_dropdown {
+  display: none;
   position: absolute;
   top: calc(100% + -30px);
   right: calc(100% + -60px);
@@ -64,11 +65,12 @@
 }
 
 .nav_dropdown.active {
+  display: block;
   opacity: 1;
   visibility: visible;
 }
 
-.nav_dropdown::before {
+/* .nav_dropdown::before {
   content: "";
   position: absolute;
   top: -5;
@@ -76,7 +78,7 @@
   height: 20px;
   width: 20px;
   transform: rotate(45deg);
-}
+} */
 
 .nav_dropdown ul {
   padding: 0;

@@ -1,19 +1,13 @@
 import React, { useCallback, useEffect, useState, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
+
 // Components
 import Header from "../components/Header/Header";
 import Main from "../components/Main/Main";
 import Footer from "../components/Footer/Footer";
 import Profile from "../components/Profile/Profile";
-// Utils
-// import {
-//   getItems,
-//   addItem,
-//   deleteItem,
-//   likeCard,
-//   fetchUserInfo,
-//   updateProfile,
-// } from "../../utils/api.js";
+import Modal from "../components/Modals/Modal.jsx";
+
 // From Modals
 import LogChoreModal from "./FormModals/LogChoreModal";
 import AddChoreModal from "./FormModals/AddChoreModal";
@@ -27,87 +21,37 @@ import "./App.css";
 function App() {
   // General functions
   const [errorResponse, setErrorResponse] = useState("");
-
   const [isLoading, setIsLoading] = React.useState(false);
+
   // NavDropDown and Modal  functions
   const [isModalOpen, setModalOpen] = useState(false);
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
   const ref = useRef();
-  // const toggleMenu = () => {
-  //   setIsMenuOpen(!isMenuOpen);
-  // };
 
   const [activeModal, setActiveModal] = useState(null);
   const handleCloseModal = useCallback(() => {
-    setModalOpen(null);
+    setModalOpen(false);
+    setActiveModal(null);
   }, []);
-  // useEffect(() => {
-  //   const listener = (event) => {
-  //     if (!ref.current || ref.curent.contains(event.target)){
-  //       return;
-  //     }
-  //   setModalOpen(false)}
-  //   };
-  // });
+
   const handleOpenModal = useCallback((modalName) => {
-    setModalOpen(modalName);
+    setModalOpen(true);
+    setActiveModal(modalName);
   }, []);
-
-  // function handleSubmit(request) {
-  //   // start loading
-  //   setIsLoading(true);
-
-  //   // Return the promise chain
-  //   return (
-  //     request()
-  //       // we need to close only in `then`
-  //       .then(handleCloseModal)
-  //       // we need to catch possible errors
-  //       // console.error is used to handle errors if you don’t have any other ways for that
-  //       .catch((error) => {
-  //         console.error(error);
-  //       })
-  //       // and in finally we need to stop loading
-  //       .finally(() => setIsLoading(false))
-  //   );
-  // }
-
-  // async function handleAddItemSubmit(
-  //   token,
-  //   newItem,
-  //   addItem,
-  //   setArrayFunction
-  // ) {
-  //   try {
-  //     // Create a function that returns a promise
-  //     const makeRequest = async () => {
-  //       // Return the promise from addItem
-  //       try {
-  //         const res = await addItem(token, newItem);
-  //         // Add the new item to the array
-  //         setArrayFunction((prevArray) => [res.data, ...prevArray]);
-  //       } catch (error) {
-  //         // Handle errors
-  //         console.error("Error adding item:", error);
-  //         throw error; // Rethrow the error to be handled in the calling code
-  //       }
-  //     };
-
-  //     // Call handleSubmit passing the request function
-  //     handleSubmit(makeRequest);
-  //   } catch (error) {
-  //     // Handle other errors
-  //     console.error("Couldn't add the item:", error);
-  //     setErrorResponse(error.message || "Couldn't add the item");
-  //   }
-  // }
+  // const handleToggleDropdown = useCallback(() => {
+  //   setDropdownOpen((prev) => !prev); // Toggle the dropdown state
+  // }, []);
+  const handleToggleDropdown = () => {
+    setDropdownOpen(!isDropdownOpen);
+  };
 
   return (
     <div className="page">
       <div className="page_wrapper">
         <Header
-          closeModal={handleCloseModal}
-          isOpen={isModalOpen}
           openModal={handleOpenModal}
+          isOpen={isDropdownOpen}
+          toggleDropdown={handleToggleDropdown}
         />
         <Routes>
           <Route path="/" element={<Main openModal={handleOpenModal} />} />
@@ -116,6 +60,15 @@ function App() {
             element={<Profile openModal={handleOpenModal} />}
           />
         </Routes>
+        <Modal isOpen={isModalOpen} closeModal={handleCloseModal}></Modal>
+
+        {activeModal === "logChore" && (
+          <LogChoreModal
+          // errorResponse={errorResponse}
+          // isLoading={isLoading}
+          // onLogChore={handleAddItemSubmit}
+          />
+        )}
         {activeModal === "signup" && (
           <SignupModal
           // onClose={handleCloseModal}
@@ -134,14 +87,6 @@ function App() {
           // handleSignin={handleSignin}
           />
         )}
-        {activeModal === "logChore" && (
-          <LogChoreModal
-
-          // errorResponse={errorResponse}
-          // isLoading={isLoading}
-          // onLogChore={handleAddItemSubmit}
-          />
-        )}
         {activeModal === "addChore" && (
           <AddChoreModal
           // errorResponse={errorResponse}
@@ -156,7 +101,26 @@ function App() {
           // onAddMember={handleAddItemSubmit}
           />
         )}
-        {/* {activeModal === "preview" && (
+
+        <Footer openModal={handleOpenModal} />
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+// Utils
+// import {
+//   getItems,
+//   addItem,
+//   deleteItem,
+//   likeCard,
+//   fetchUserInfo,
+//   updateProfile,
+// } from "../../utils/api.js";
+{
+  /* {activeModal === "preview" && (
           <ItemModal
             selectedCard={selectedCard}
             onClose={handleCloseModal}
@@ -184,11 +148,67 @@ function App() {
             handleLogout={handleLogout}
             isLoading={isLoading}
           />
-        )} */}
-        <Footer openModal={handleOpenModal} />
-      </div>
-    </div>
-  );
+        )} */
 }
 
-export default App;
+// useEsc(handleCloseModal);
+// useClickOutside(ref, handleCloseModal);
+// const toggleMenu = () => {
+//   setIsMenuOpen(!isMenuOpen);
+// };
+// useEffect(() => {
+//   const listener = (event) => {
+//     if (!ref.current || ref.curent.contains(event.target)){
+//       return;
+//     }
+//   setModalOpen(false)}
+//   };
+// });
+// function handleSubmit(request) {
+//   // start loading
+//   setIsLoading(true);
+
+//   // Return the promise chain
+//   return (
+//     request()
+//       // we need to close only in `then`
+//       .then(handleCloseModal)
+//       // we need to catch possible errors
+//       // console.error is used to handle errors if you don’t have any other ways for that
+//       .catch((error) => {
+//         console.error(error);
+//       })
+//       // and in finally we need to stop loading
+//       .finally(() => setIsLoading(false))
+//   );
+// }
+
+// async function handleAddItemSubmit(
+//   token,
+//   newItem,
+//   addItem,
+//   setArrayFunction
+// ) {
+//   try {
+//     // Create a function that returns a promise
+//     const makeRequest = async () => {
+//       // Return the promise from addItem
+//       try {
+//         const res = await addItem(token, newItem);
+//         // Add the new item to the array
+//         setArrayFunction((prevArray) => [res.data, ...prevArray]);
+//       } catch (error) {
+//         // Handle errors
+//         console.error("Error adding item:", error);
+//         throw error; // Rethrow the error to be handled in the calling code
+//       }
+//     };
+
+//     // Call handleSubmit passing the request function
+//     handleSubmit(makeRequest);
+//   } catch (error) {
+//     // Handle other errors
+//     console.error("Couldn't add the item:", error);
+//     setErrorResponse(error.message || "Couldn't add the item");
+//   }
+// }
