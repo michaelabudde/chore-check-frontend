@@ -25,19 +25,19 @@ const ModalWithForm = ({
           </span>
         </div>
 
-        <form
+        {/* <form
           onSubmit={onSubmit}
           className="modal-form__inputs-container"
           name={`${formInfo.name}-form`}
-        >
-          {children}
+        > */}
+        {children}
 
-          <div className="modal-form__button-wrapper">
-            <button type="submit" className="modal-form__submit-button">
-              {isLoading ? "Saving..." : formInfo.buttonText}
-            </button>
-          </div>
-        </form>
+        <div className="modal-form__button-wrapper">
+          <button type="submit" className="modal-form__submit-button">
+            {isLoading ? "Saving..." : formInfo.buttonText}
+          </button>
+        </div>
+        {/* </form> */}
       </div>
     </Modal>
   );

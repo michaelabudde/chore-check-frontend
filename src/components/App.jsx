@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
 // Components
 import Header from "../components/Header/Header";
@@ -29,18 +29,27 @@ function App() {
   const [errorResponse, setErrorResponse] = useState("");
 
   const [isLoading, setIsLoading] = React.useState(false);
-  // NavDropDown functions
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-  // Modal functions
+  // NavDropDown and Modal  functions
+  const [isModalOpen, setModalOpen] = useState(false);
+  const ref = useRef();
+  // const toggleMenu = () => {
+  //   setIsMenuOpen(!isMenuOpen);
+  // };
+
   const [activeModal, setActiveModal] = useState(null);
-  // const handleCloseModal = useCallback(() => {
-  //   setActiveModal(null);
-  // }, []);
+  const handleCloseModal = useCallback(() => {
+    setModalOpen(null);
+  }, []);
+  // useEffect(() => {
+  //   const listener = (event) => {
+  //     if (!ref.current || ref.curent.contains(event.target)){
+  //       return;
+  //     }
+  //   setModalOpen(false)}
+  //   };
+  // });
   const handleOpenModal = useCallback((modalName) => {
-    setActiveModal(modalName);
+    setModalOpen(modalName);
   }, []);
 
   // function handleSubmit(request) {
@@ -96,8 +105,8 @@ function App() {
     <div className="page">
       <div className="page_wrapper">
         <Header
-          toggleMenu={toggleMenu}
-          isOpen={isMenuOpen}
+          closeModal={handleCloseModal}
+          isOpen={isModalOpen}
           openModal={handleOpenModal}
         />
         <Routes>

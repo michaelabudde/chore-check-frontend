@@ -64,7 +64,7 @@ p {
 }
 
 button {
-  border: 1px solid transparent;
+  /* border: 1px solid transparent; */
   font-size: 25px;
   font-family: "Bebas Neue", sans-serif;
   font-style: normal;
@@ -72,10 +72,10 @@ button {
 
   cursor: pointer;
   transition: 0.25s;
-
+  border: none;
   padding: 16px;
   border-radius: 30px;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 button:hover {
   border-color: #cbe1b7;

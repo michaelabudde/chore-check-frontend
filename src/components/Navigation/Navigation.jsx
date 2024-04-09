@@ -14,7 +14,7 @@ function DropdownItem(props) {
   );
 }
 
-const Navigation = ({ isOpen, openModal, toggleMenu }) => {
+const Navigation = ({ isOpen, openModal }) => {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null); // Ref for dropdown menu container
 

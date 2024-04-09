@@ -36,7 +36,7 @@ const LogChoreModal = ({ chores, members, onLogChore, addItem, setArray }) => {
 
   return (
     <ModalWithForm formInfo={formInfo} modalName="logChore">
-      <form onSubmit={handleSubmit} class="modal-form__inputs-container">
+      <form onSubmit={handleSubmit} className="modal-form__inputs-container">
         <div className="modal-form__label-container">
           <label className="modal-form__label">
             Select Chore:
