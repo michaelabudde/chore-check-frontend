@@ -8,7 +8,6 @@ const AddMemberModal = ({
   response,
   isLoading,
   isOpen,
-  closeModal,
 }) => {
   // isopen removed
   const { values, handleChange, errors, resetForm } = useFormAndValidation();
@@ -34,7 +33,6 @@ const AddMemberModal = ({
       formInfo={formInfo}
       isLoading={isLoading}
       isOpen={isOpen}
-      closeModal={closeModal}
     >
       <div>
         <div className="modal-form__label-container">

@@ -7,7 +7,7 @@ import "./ModalWithForm.css";
 
 const ModalWithForm = ({
   children,
-  closeModal,
+  onClose,
   onSubmit,
   isLoading,
   formInfo,
@@ -15,12 +15,11 @@ const ModalWithForm = ({
 }) => {
   const modalRef = useRef(null);
 
-  useEsc(closeModal);
-  // useClickOutside(modalRef, closeModal);
+  useEsc(onClose);
+  // useClickOutside(modalRef, onClose);
   // const { response } = useContext(ResponseContext);
-  console.log(formInfo);
   return (
-    <Modal formInfo={formInfo} isOpen={isOpen} closeModal={closeModal}>
+    <Modal formInfo={formInfo} isOpen={isOpen} onClose={onClose}>
       <div ref={modalRef}>
         <h1 className="modal-form__title">{formInfo?.title}</h1>
         <div className="modal-form__label-container">

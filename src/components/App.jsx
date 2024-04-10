@@ -15,6 +15,7 @@ import AddChoreModal from "./FormModals/AddChoreModal";
 import AddMemberModal from "./FormModals/AddMemberModal";
 import SigninModal from "./FormModals/SigninModal";
 import SignupModal from "./FormModals/SignupModal";
+import ConfirmSignout from "./ConfirmModals/ConfirmSignout.jsx";
 // Preview Modals
 
 import "./App.css";
@@ -53,6 +54,7 @@ function App() {
           openModal={handleOpenModal}
           isOpen={isDropdownOpen}
           toggleDropdown={handleToggleDropdown}
+          onClose={handleCloseModal}
         />
         <Routes>
           <Route path="/" element={<Main openModal={handleOpenModal} />} />
@@ -65,7 +67,7 @@ function App() {
         {activeModal === "logChore" && (
           <LogChoreModal
             isOpen={isModalOpen}
-            closeModal={handleCloseModal}
+            onClose={handleCloseModal}
             // errorResponse={errorResponse}
             // isLoading={isLoading}
             // onLogChore={handleAddItemSubmit}
@@ -74,8 +76,7 @@ function App() {
         {activeModal === "signup" && (
           <SignupModal
             isOpen={isModalOpen}
-            closeModal={handleCloseModal}
-            // onClose={handleCloseModal}
+            onClose={handleCloseModal}
             // openModal={handleOpenModal}
             // signupError={signupError}
             // isLoading={isLoading}
@@ -85,8 +86,7 @@ function App() {
         {activeModal === "signin" && (
           <SigninModal
             isOpen={isModalOpen}
-            closeModal={handleCloseModal}
-            // onClose={handleCloseModal}
+            onClose={handleCloseModal}
             // openModal={handleOpenModal}
             // loginError={loginError}
             // isLoading={isLoading}
@@ -96,7 +96,7 @@ function App() {
         {activeModal === "addChore" && (
           <AddChoreModal
             isOpen={isModalOpen}
-            closeModal={handleCloseModal}
+            onClose={handleCloseModal}
             // errorResponse={errorResponse}
             // isLoading={isLoading}
             // onAddChore={handleAddItemSubmit}
@@ -105,13 +105,27 @@ function App() {
         {activeModal === "addMember" && (
           <AddMemberModal
             isOpen={isModalOpen}
-            closeModal={handleCloseModal}
+            onClose={handleCloseModal}
             // isLoading={isLoading}
             // errorResponse={errorResponse}
             // onAddMember={handleAddItemSubmit}
           />
         )}
 
+        {activeModal === "editProfile" && (
+          <EditProfileModal
+            onClose={handleCloseModal}
+            handleProfileUpdate={handleProfileUpdate}
+            isLoading={isLoading}
+          />
+        )}
+        {activeModal === "signout" && (
+          <ConfirmSignout
+            onClose={handleCloseModal}
+            // handleSignout={handleSignout}
+            isLoading={isLoading}
+          />
+        )}
         <Footer openModal={handleOpenModal} />
       </div>
     </div>
@@ -129,37 +143,6 @@ export default App;
 //   fetchUserInfo,
 //   updateProfile,
 // } from "../../utils/api.js";
-{
-  /* {activeModal === "preview" && (
-          <ItemModal
-            selectedCard={selectedCard}
-            onClose={handleCloseModal}
-            onDeleteItem={handleCardDelete}
-          />
-        )}
-        {activeModal === "confirm" && (
-          <ConfirmDeleteModal
-            onClose={handleCloseModal}
-            handleDelete={handleDeleteConfirmed}
-            selectedCard={selectedCard}
-            isLoading={isLoading}
-          />
-        )}
-        {activeModal === "edit profile" && (
-          <EditProfileModal
-            onClose={handleCloseModal}
-            handleProfileUpdate={handleProfileUpdate}
-            isLoading={isLoading}
-          />
-        )}
-        {activeModal === "logout" && (
-          <ConfirmLogoutModal
-            onClose={handleCloseModal}
-            handleLogout={handleLogout}
-            isLoading={isLoading}
-          />
-        )} */
-}
 
 // useEsc(handleCloseModal);
 // useClickOutside(ref, handleCloseModal);
@@ -222,3 +205,19 @@ export default App;
 //     setErrorResponse(error.message || "Couldn't add the item");
 //   }
 // }
+// for later:
+// {activeModal === "confirm" && (
+//   <ConfirmDeleteModal
+//     onClose={handleCloseModal}
+//     handleDelete={handleDeleteConfirmed}
+//     selectedCard={selectedCard}
+//     isLoading={isLoading}
+//   />
+// )}
+// {activeModal === "preview" && (
+//   <ItemModal
+//     selectedCard={selectedCard}
+//     onClose={handleCloseModal}
+//     onDeleteItem={handleCardDelete}
+//   />
+// )}

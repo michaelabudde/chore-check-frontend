@@ -5,13 +5,7 @@ import ModalWithForm from "./ModalWithForm";
 import "./ModalWithForm.css";
 import { fetchedChores, fetchedMembers } from "../../utils/constants.jsx";
 
-const LogChoreModal = ({
-  onLogChore,
-  addItem,
-  setArray,
-  isOpen,
-  closeModal,
-}) => {
+const LogChoreModal = ({ onLogChore, addItem, setArray, isOpen, onClose }) => {
   const formInfo = {
     title: "Log Chore",
     name: "logChore",
@@ -27,13 +21,12 @@ const LogChoreModal = ({
   const handleMemberChange = (e) => {
     setSelectedMember(e.target.value);
   };
-  console.log(formInfo);
   return (
     <ModalWithForm
       formInfo={formInfo}
       modalName="logChore"
       isOpen={isOpen}
-      closeModal={closeModal}
+      onClose={onClose}
     >
       <div className="modal-form__inputs-container">
         <div className="modal-form__label-container">

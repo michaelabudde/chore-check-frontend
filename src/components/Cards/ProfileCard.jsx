@@ -50,7 +50,7 @@ const Button = styled.button`
 // const username = currentUser ? currentUser.name : "Terrence Tegegne";
 const username = "Dana Adisa";
 const housename = "The Adisa House";
-const ProfileCard = ({ item, onCardClick }) => {
+const ProfileCard = ({ item, onCardClick, openModal }) => {
   // const { currentUser } = useContext(CurrentUserContext);
   // const { isLoggedIn } = useContext(AuthContext);
 
@@ -67,7 +67,7 @@ const ProfileCard = ({ item, onCardClick }) => {
         <h2>{username}</h2>
       </Row>
       <p>{housename}</p>
-      <Button onClick={() => handleClick("editProfile")}>Edit Profile</Button>
+      <Button onClick={() => openModal("editProfile")}>Edit Profile</Button>
     </Card>
   );
 };

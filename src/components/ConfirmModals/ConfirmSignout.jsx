@@ -1,13 +1,18 @@
 import React from "react";
 import useEsc from "../../hooks/useEsc";
-import "../ConfirmationModals/ConfirmationModal.css";
-import "../ModalWithForm/ModalWithForm.css";
+// import "../ConfirmationModals/ConfirmationModal.css";
+// import "../ModalWithForm/ModalWithForm.css";
+import ModalWithForm from "../FormModals/ModalWithForm";
 
-const ConfirmSignout = ({ onClose, handleLogout, isLoading }) => {
+const ConfirmSignout = ({ handleSignout, isLoading, isOpen, onClose }) => {
   useEsc(onClose);
   return (
-    <div className="modal-form ">
-      <div className="modal-form__overlay" onClick={onClose}></div>
+    <ModalWithForm
+      // onSubmit={onSubmit}
+      isLoading={isLoading}
+      isOpen={isOpen}
+      onClose={onClose}
+    >
       <div className="confirmation-modal__container">
         <h2 className="confirmation-modal__query">
           Are you sure you want to sign out?
@@ -16,7 +21,7 @@ const ConfirmSignout = ({ onClose, handleLogout, isLoading }) => {
           type="button"
           className="confirmation-modal__delete"
           onClick={() => {
-            handleLogout();
+            handleSignout();
           }}
         >
           {isLoading ? "Signing out..." : "Sign Out"}
@@ -28,13 +33,8 @@ const ConfirmSignout = ({ onClose, handleLogout, isLoading }) => {
         >
           Cancel
         </button>
-        <button
-          className="modal-form__close-button"
-          type="button"
-          onClick={onClose}
-        ></button>
       </div>
-    </div>
+    </ModalWithForm>
   );
 };
 

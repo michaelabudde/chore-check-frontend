@@ -11,7 +11,6 @@ const SignupModal = ({
   signupError,
   isLoading,
   isOpen,
-  closeModal,
 }) => {
   // isOpen removed
   const { values, handleChange, errors, resetForm } = useFormAndValidation();
@@ -39,7 +38,6 @@ const SignupModal = ({
       onSubmit={onSubmit}
       isLoading={isLoading}
       isOpen={isOpen}
-      closeModal={closeModal}
     >
       <div className="modal-form__label-container">
         <label className="modal-form__label" htmlFor="email">
@@ -93,18 +91,38 @@ const SignupModal = ({
       <input
         className="modal-form__input"
         type="text"
-        id="name"
-        name="name"
+        id="member"
+        name="member"
         placeholder="Name"
         minLength="1"
         maxLength="30"
         required
         onChange={handleChange}
-        value={values.name || ""}
+        value={values.member || ""}
+      />
+      <div className="modal-form__label-container">
+        <label className="modal-form__label" htmlFor="house">
+          Household Name
+        </label>
+        <span className="modal-form__error" id="house-error">
+          {errors.name || ""}
+        </span>
+      </div>
+      <input
+        className="modal-form__input"
+        type="text"
+        id="house"
+        name="house"
+        placeholder="Household Name (Optional)"
+        minLength="1"
+        maxLength="30"
+        required
+        onChange={handleChange}
+        value={values.house || ""}
       />
       <div className="modal-form__label-container">
         <label className="modal-form__label" htmlFor="link">
-          Profile Picture URL
+          Select Profile Icon
         </label>
         <span className="modal-form__error" id="link-error">
           {errors.avatar || ""}

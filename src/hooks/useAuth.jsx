@@ -13,7 +13,7 @@ const useAuth = (handleCloseModal) => {
   const [loginError, setLoginError] = useState(null);
 
   // debugger;
-  const handleLogIn = async ({ email, password }) => {
+  const handleSignIn = async ({ email, password }) => {
     const config = loginConfig(email, password);
     try {
       const res = await api("POST", "/signin", "", config);
@@ -29,7 +29,7 @@ const useAuth = (handleCloseModal) => {
         handleCloseModal(""); // does it need to handle close if subit already handles close?
       } else {
         console.error(res.message);
-        setErrorResponse(res.message || "Log in failed");
+        setErrorResponse(res.message || "sign in failed");
         setLoginError(res.message || "Wrong email or password");
       }
     } catch (error) {
@@ -59,7 +59,7 @@ const useAuth = (handleCloseModal) => {
     }
   };
 
-  const handleLogout = () => {
+  const handleSignout = () => {
     localStorage.removeItem("jwt");
     setIsLoggedIn(false);
     setCurrentUser(null);
@@ -68,9 +68,9 @@ const useAuth = (handleCloseModal) => {
   };
 
   return {
-    handleLogIn,
+    handleSignIn,
     handleSignUp,
-    handleLogout,
+    handleSignout,
     errorResponse,
     setErrorResponse,
     signupError,

@@ -6,25 +6,24 @@ import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 
 const SigninModal = ({
   onClose,
-  handleLogIn,
+  handleSignin,
   openModal,
-  loginError,
+  signinError,
   isLoading,
   isOpen,
-  closeModal,
 }) => {
   // removed isOpen
   const { values, handleChange, errors, resetForm } = useFormAndValidation();
 
   const formInfo = {
-    title: "Log in",
-    name: "login",
-    buttonText: "Log in",
+    title: "Sign in",
+    name: "signin",
+    buttonText: "Sign In",
   };
 
   function onSubmit(e) {
     e.preventDefault();
-    handleLogIn(values);
+    handleSignin(values);
   }
 
   useEffect(() => {
@@ -35,19 +34,17 @@ const SigninModal = ({
   return (
     <ModalWithForm
       formInfo={formInfo}
-      onClose={onClose}
       onSubmit={onSubmit}
       isLoading={isLoading}
-      modalName="login"
       isOpen={isOpen}
-      closeModal={closeModal}
+      onClose={onClose}
     >
       <div className="modal-form__label-container">
         <label className="modal-form__label" htmlFor="email">
           Email
         </label>
         <span className="modal-form__error" id="name-error">
-          {errors.email || loginError || ""}
+          {errors.email || signinError || ""}
         </span>
       </div>
       <input

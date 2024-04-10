@@ -7,14 +7,14 @@ const Profile = ({ openModal }) => {
   return (
     <div className="profile">
       <div className="sidebar">
-        <ProfileCard />
+        <ProfileCard openModal={openModal} />
       </div>
       <div className="profile-content">
         <div className="profile__heading">
           <h2> Your Chore List</h2>
           <button
             className="profile__button"
-            onClick={() => handleClick("addChore")}
+            onClick={() => openModal("addChore")}
           >
             Add a Chore
           </button>
@@ -26,7 +26,7 @@ const Profile = ({ openModal }) => {
           <h2> Your Household Members</h2>
           <button
             className="profile__button"
-            onClick={() => handleClick("addMember")}
+            onClick={() => openModal("addMember")}
           >
             Add a Member
           </button>

@@ -27,7 +27,7 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: #a560dc;
+  color: #6b84d1;
 }
 
 body {
@@ -99,7 +99,7 @@ select {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #6b84d1;
   }
   button {
     background-color: #f9f9f9;

@@ -11,27 +11,30 @@ const Main = ({ openModal }) => {
   return (
     <main className="main">
       <div className="main__catch">
-        <h1>Your Completed Chores This Week</h1>
-        <button className="main__button" onClick={() => openModal("logChore")}>
-          Log a Chore
-        </button>
-        <div className="main__calendar">
-          <Calendar />
-        </div>
-        <h2> Your Chore List</h2>
-        <button className="main__button" onClick={() => openModal("addChore")}>
-          Add a Chore
-        </button>
-        <ChoreList />
+        <h1>Need Some Help Managing Chores?</h1>
 
-        <h2> Your Household Members</h2>
-        <button className="main__button" onClick={() => openModal("addMember")}>
-          Add a Member
-        </button>
-        <MemberList />
+        <h2>Digitally track chores in any household.</h2>
 
+        <button className="main__button">Sign up here</button>
+
+        <img src={cleaning_1} alt="cleaning image" className="main__image" />
+
+        <p>Family homes and Co-ops can be hard to manage.</p>
+
+        <h2>Chore Check is an easy solution to tracking chores</h2>
+      </div>
+
+      <div className="main__how">
+        <h1>How it works</h1>
+
+        <p>
+          Users can create a chore list and add their household members. Then
+          when a chore is completed it is signed in a calendar like this.
+        </p>
+        {/* calendar placeholder*/}
         <img src={cleaning_2} alt="cleaning image" className="main__image" />
       </div>
+
       {/* always return about section */}
       <div className="main__about">
         <div className="main__about_image">
@@ -60,6 +63,36 @@ const Main = ({ openModal }) => {
   );
 };
 export default Main;
+
+{
+  /* // Signed in main */
+}
+
+{
+  /* <main className="main">
+<div className="main__catch">
+  <h1>Your Completed Chores This Week</h1>
+  <button className="main__button" onClick={() => openModal("logChore")}>
+    Log a Chore
+  </button>
+  <div className="main__calendar">
+    <Calendar />
+  </div>
+  <h2> Your Chore List</h2>
+  <button className="main__button" onClick={() => openModal("addChore")}>
+    Add a Chore
+  </button>
+  <ChoreList />
+
+  <h2> Your Household Members</h2>
+  <button className="main__button" onClick={() => openModal("addMember")}>
+    Add a Member
+  </button>
+  <MemberList />
+
+  <img src={cleaning_2} alt="cleaning image" className="main__image" />
+</div> */
+}
 
 //   const signedOutMain = (
 //    {/* move main_catch and main_how here*/}

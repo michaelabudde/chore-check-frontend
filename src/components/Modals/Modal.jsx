@@ -6,22 +6,21 @@ import useEsc from "../../hooks/useEsc";
 const Modal = ({
   children,
   isOpen,
-  closeModal,
+  onClose,
   onSubmit,
   isLoading,
   formInfo,
 }) => {
   const modalRef = useRef(null);
-  useEsc(closeModal);
-  // useClickOutside(modalRef, closeModal);
-  console.log(formInfo);
+  useEsc(onClose);
+  // useClickOutside(modalRef, onClose);
   return (
     <div className="modal">
       <div className="modal__container" ref={modalRef}>
-        <div className="modal__overlay" onClick={closeModal} />
+        <div className="modal__overlay" onClick={onClose} />
         <button
           type="button"
-          onClick={closeModal}
+          onClick={onClose}
           className="modal__close-button"
         />
         {children}
