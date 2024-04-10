@@ -1,6 +1,6 @@
 import "./Main.css";
 import useEsc from "../../hooks/useEsc";
-import useClickOutside from "../../hooks/useClickOutside";
+// import useClickOutside from "../../hooks/useClickOutside";
 import cleaning_1 from "../../images/cleaning_1.png";
 import cleaning_2 from "../../images/cleaning_2.png";
 import author_image from "../../images/profilegreenmb.png";

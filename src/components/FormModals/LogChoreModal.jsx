@@ -5,7 +5,13 @@ import ModalWithForm from "./ModalWithForm";
 import "./ModalWithForm.css";
 import { fetchedChores, fetchedMembers } from "../../utils/constants.jsx";
 
-const LogChoreModal = ({ onLogChore, addItem, setArray, isOpen }) => {
+const LogChoreModal = ({
+  onLogChore,
+  addItem,
+  setArray,
+  isOpen,
+  closeModal,
+}) => {
   const formInfo = {
     title: "Log Chore",
     name: "logChore",
@@ -23,45 +29,60 @@ const LogChoreModal = ({ onLogChore, addItem, setArray, isOpen }) => {
   };
   console.log(formInfo);
   return (
-    <>
-      {isOpen && (
-        <ModalWithForm formInfo={formInfo} modalName="logChore">
-          <div className="modal-form__inputs-container">
-            <div className="modal-form__label-container">
-              <label className="modal-form__label">
-                Select Chore:
-                <select value={selectedChore} onChange={handleChoreChange}>
-                  <option className="modal-form__option" value="">
-                    Select Chore
-                  </option>
-                  {fetchedChores.map((chore) => (
-                    <option key={chore.id} value={chore.id}>
-                      {chore.name}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            </div>
-            <div className="modal-form__label-container">
-              <label className="modal-form__label">
-                Select Member:
-                <select value={selectedMember} onChange={handleMemberChange}>
-                  <option className="modal-form__option" value="">
-                    Select Member
-                  </option>
-                  {fetchedMembers.map((member) => (
-                    <option key={member.id} value={member.id}>
-                      {member.name}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            </div>
-          </div>
-        </ModalWithForm>
-      )}
-      ;
-    </>
+    <ModalWithForm
+      formInfo={formInfo}
+      modalName="logChore"
+      isOpen={isOpen}
+      closeModal={closeModal}
+    >
+      <div className="modal-form__inputs-container">
+        <div className="modal-form__label-container">
+          <label className="modal-form__label">
+            Select Completed Chore:
+            <select value={selectedChore} onChange={handleChoreChange}>
+              <option className="modal-form__option" value="">
+                Chore
+              </option>
+              {fetchedChores.map((chore) => (
+                <option key={chore.id} value={chore.id}>
+                  {chore.name}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <div className="modal-form__label-container">
+          <label className="modal-form__label">
+            Select Member:
+            <select value={selectedMember} onChange={handleMemberChange}>
+              <option className="modal-form__option" value="">
+                Member
+              </option>
+              {fetchedMembers.map((member) => (
+                <option key={member.id} value={member.id}>
+                  {member.name}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <div className="modal-form__label-container">
+          <label className="modal-form__label">
+            Enter Date Completed:
+            <select value={selectedMember} onChange={handleMemberChange}>
+              <option className="modal-form__option" value="">
+                Date
+              </option>
+              {fetchedMembers.map((member) => (
+                <option key={member.id} value={member.id}>
+                  {member.name}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+      </div>
+    </ModalWithForm>
   );
 };
 

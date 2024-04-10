@@ -61,16 +61,11 @@ function App() {
             element={<Profile openModal={handleOpenModal} />}
           />
         </Routes>
-        <Modal isOpen={isModalOpen} closeModal={handleCloseModal}></Modal>
-        <ModalWithForm
-          isOpen={isModalOpen}
-          closeModal={handleCloseModal}
-        ></ModalWithForm>
 
         {activeModal === "logChore" && (
           <LogChoreModal
             isOpen={isModalOpen}
-
+            closeModal={handleCloseModal}
             // errorResponse={errorResponse}
             // isLoading={isLoading}
             // onLogChore={handleAddItemSubmit}
@@ -78,34 +73,42 @@ function App() {
         )}
         {activeModal === "signup" && (
           <SignupModal
-          // onClose={handleCloseModal}
-          // openModal={handleOpenModal}
-          // signupError={signupError}
-          // isLoading={isLoading}
-          // handleSignup={handleSignup}
+            isOpen={isModalOpen}
+            closeModal={handleCloseModal}
+            // onClose={handleCloseModal}
+            // openModal={handleOpenModal}
+            // signupError={signupError}
+            // isLoading={isLoading}
+            // handleSignup={handleSignup}
           />
         )}
         {activeModal === "signin" && (
           <SigninModal
-          // onClose={handleCloseModal}
-          // openModal={handleOpenModal}
-          // loginError={loginError}
-          // isLoading={isLoading}
-          // handleSignin={handleSignin}
+            isOpen={isModalOpen}
+            closeModal={handleCloseModal}
+            // onClose={handleCloseModal}
+            // openModal={handleOpenModal}
+            // loginError={loginError}
+            // isLoading={isLoading}
+            // handleSignin={handleSignin}
           />
         )}
         {activeModal === "addChore" && (
           <AddChoreModal
-          // errorResponse={errorResponse}
-          // isLoading={isLoading}
-          // onAddChore={handleAddItemSubmit}
+            isOpen={isModalOpen}
+            closeModal={handleCloseModal}
+            // errorResponse={errorResponse}
+            // isLoading={isLoading}
+            // onAddChore={handleAddItemSubmit}
           />
         )}
         {activeModal === "addMember" && (
           <AddMemberModal
-          // isLoading={isLoading}
-          // errorResponse={errorResponse}
-          // onAddMember={handleAddItemSubmit}
+            isOpen={isModalOpen}
+            closeModal={handleCloseModal}
+            // isLoading={isLoading}
+            // errorResponse={errorResponse}
+            // onAddMember={handleAddItemSubmit}
           />
         )}
 

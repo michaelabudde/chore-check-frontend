@@ -3,31 +3,34 @@
   justify-content: center;
   align-items: center;
   position: fixed;
-  left: 0;
-  right: 0;
   top: 0;
-  bottom: 0;
+  left: 0;
+  width: 100vw; /* Take full width of the viewport */
+  height: 100vh; /* Take full height of the viewport */
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 22;
 }
+
 .modal__overlay {
-  position: absolute;
+  position: fixed; /* Change position to fixed */
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%; /* Take full width of the viewport */
+  height: 100%; /* Take full height of the viewport */
+
   z-index: 20;
 }
+
 .modal__container {
   position: relative;
   background-color: white;
-  max-height: fit-content;
   max-width: 490px;
   border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   padding: 2em;
   z-index: 21;
 }
+
 .modal__close-button {
   position: absolute;
   top: 20px;

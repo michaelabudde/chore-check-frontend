@@ -85,6 +85,14 @@ button:focus-visible {
   outline: 4px auto #cbe1b7;
 }
 
+select {
+  font-size: 20px;
+  margin-top: 6px;
+  font-family: "Outfit", sans-serif;
+  font-style: normal;
+  width: 16em;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #050505;

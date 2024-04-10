@@ -10,6 +10,8 @@ const SignupModal = ({
   openModal,
   signupError,
   isLoading,
+  isOpen,
+  closeModal,
 }) => {
   // isOpen removed
   const { values, handleChange, errors, resetForm } = useFormAndValidation();
@@ -36,6 +38,8 @@ const SignupModal = ({
       modalName="sign-up"
       onSubmit={onSubmit}
       isLoading={isLoading}
+      isOpen={isOpen}
+      closeModal={closeModal}
     >
       <div className="modal-form__label-container">
         <label className="modal-form__label" htmlFor="email">

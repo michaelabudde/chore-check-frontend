@@ -2,7 +2,14 @@ import React, { useEffect } from "react";
 import ModalWithForm from "./ModalWithForm";
 import "./ModalWithForm.css";
 import { useFormAndValidation } from "../../hooks/useFormAndValidation";
-const AddChoreModal = ({ onClose, onAddChore, response, isLoading }) => {
+const AddChoreModal = ({
+  onClose,
+  onAddChore,
+  response,
+  isLoading,
+  isOpen,
+  closeModal,
+}) => {
   // isopen removed
   const { values, handleChange, errors, resetForm } = useFormAndValidation();
   const formInfo = {
@@ -26,6 +33,8 @@ const AddChoreModal = ({ onClose, onAddChore, response, isLoading }) => {
       onSubmit={onSubmit}
       formInfo={formInfo}
       isLoading={isLoading}
+      isOpen={isOpen}
+      closeModal={closeModal}
     >
       <div>
         <div className="modal-form__label-container">

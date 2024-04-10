@@ -10,6 +10,8 @@ const SigninModal = ({
   openModal,
   loginError,
   isLoading,
+  isOpen,
+  closeModal,
 }) => {
   // removed isOpen
   const { values, handleChange, errors, resetForm } = useFormAndValidation();
@@ -37,6 +39,8 @@ const SigninModal = ({
       onSubmit={onSubmit}
       isLoading={isLoading}
       modalName="login"
+      isOpen={isOpen}
+      closeModal={closeModal}
     >
       <div className="modal-form__label-container">
         <label className="modal-form__label" htmlFor="email">

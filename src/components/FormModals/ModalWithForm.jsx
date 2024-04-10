@@ -1,6 +1,6 @@
 import React, { useContext, useRef } from "react";
 import useEsc from "../../hooks/useEsc";
-import useClickOutside from "../../hooks/useClickOutside";
+// import useClickOutside from "../../hooks/useClickOutside";
 // import { ResponseContext } from "../../contexts/ResponseContext.jsx";
 import Modal from "../Modals/Modal";
 import "./ModalWithForm.css";
@@ -16,40 +16,35 @@ const ModalWithForm = ({
   const modalRef = useRef(null);
 
   useEsc(closeModal);
-  useClickOutside(modalRef, closeModal);
+  // useClickOutside(modalRef, closeModal);
   // const { response } = useContext(ResponseContext);
   console.log(formInfo);
   return (
-    <>
-      {isOpen && (
-        <Modal>
-          <div ref={modalRef}>
-            <h1 className="modal-form__title">{formInfo.title}</h1>
-            <div className="modal-form__label-container">
-              <label className="modal-form__label"></label>
-              <span className="modal-form__error modal__server-error">
-                {/* {response || ""} */}
-              </span>
-            </div>
+    <Modal formInfo={formInfo} isOpen={isOpen} closeModal={closeModal}>
+      <div ref={modalRef}>
+        <h1 className="modal-form__title">{formInfo?.title}</h1>
+        <div className="modal-form__label-container">
+          <label className="modal-form__label"></label>
+          <span className="modal-form__error modal__server-error">
+            {/* {response || ""} */}
+          </span>
+        </div>
 
-            <form
-              onSubmit={onSubmit}
-              className="modal-form__inputs-container"
-              name={`${formInfo.name}-form`}
-            >
-              {children}
+        <form
+          onSubmit={onSubmit}
+          className="modal-form__inputs-container"
+          name={`${formInfo?.name}-form`}
+        >
+          {children}
 
-              <div className="modal-form__button-wrapper">
-                <button type="submit" className="modal-form__submit-button">
-                  {isLoading ? "Saving..." : formInfo.buttonText}
-                </button>
-              </div>
-            </form>
+          <div className="modal-form__button-wrapper">
+            <button type="submit" className="modal-form__submit-button">
+              {isLoading ? "Saving..." : formInfo?.buttonText}
+            </button>
           </div>
-        </Modal>
-      )}
-      ;
-    </>
+        </form>
+      </div>
+    </Modal>
   );
 };
 
