@@ -12,40 +12,8 @@ const Navigation = ({ isOpen, openModal, toggleDropdown, onClose }) => {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null); // Ref for dropdown menu container
 
-  const closeDropdown = () => {
-    setOpen(false);
-  };
-
-  function DropdownItem(props) {
-    const handleClick = () => {
-      props.onClick(); // Call the onClick function passed from parent (openModal)
-      props.closeDropdown(); // Call the function to close the dropdown
-    };
-
-    return (
-      <li className="nav_dropdown_item" onClick={handleClick}>
-        {props.to ? (
-          <Link to={props.to}>{props.text}</Link>
-        ) : (
-          <span>{props.text}</span>
-        )}
-      </li>
-    );
-  }
-
   useClickOutside(dropdownRef, () => isOpen && toggleDropdown());
-  // useEsc(handleToggleMenu);
   useEsc(() => isOpen && toggleDropdown());
-
-  // useEffect(() => {
-  //   if (!isOpen) {
-  //     toggleDropdown(); // Close dropdown if it's open initially
-  //   }
-  // }, [isOpen, toggleDropdown]);
-  // const handleItemClick = () => {
-  //   toggleDropdown();
-  //   openModal();
-  // };
 
   return (
     <nav className="nav">
@@ -64,20 +32,24 @@ const Navigation = ({ isOpen, openModal, toggleDropdown, onClose }) => {
           >
             <ul>
               <h2 className="nav_username">Dana Adisa</h2>
-              <DropdownItem
-                closeDropdown={closeDropdown}
+              <Link
+                className="nav_dropdown_item"
                 text={"My Profile"}
                 to="/profile"
-                onClick={closeDropdown}
-              />
-              <DropdownItem
-                closeDropdown={closeDropdown}
+                onClick={toggleDropdown}
+              >
+                My Profile
+              </Link>
+              <span
+                className="nav_dropdown_item"
                 text={"Sign Out"}
                 onClick={() => {
                   openModal("signout");
-                  closeDropdown(); // Close the dropdown after opening the modal
+                  toggleDropdown(); // Close the dropdown after opening the modal
                 }}
-              />
+              >
+                Sign Out
+              </span>
             </ul>
           </div>
         </div>
@@ -210,6 +182,15 @@ export default Navigation;
 //   }
 // }, [isOpen, toggleDropdown]);
 
+// useEffect(() => {
+//   if (!isOpen) {
+//     toggleDropdown(); // Close dropdown if it's open initially
+//   }
+// }, [isOpen, toggleDropdown]);
+// const handleItemClick = () => {
+//   toggleDropdown();
+//   openModal();
+// };
 // for later;
 // add edit profile to dropdown
 {
@@ -219,3 +200,20 @@ to="/profile"
 onClick={() => handleItemClick("")}
 /> */
 }
+
+// function DropdownItem(props) {
+//   const handleClick = () => {
+//     props.onClick(); // Call the onClick function passed from parent (openModal)
+//     props.toggleDropdown(); // Call the function to close the dropdown
+//   };
+
+//   return (
+//     <li className="nav_dropdown_item" onClick={handleClick}>
+//       {props.to ? (
+//         <Link to={props.to}>{props.text}</Link>
+//       ) : (
+//         <span>{props.text}</span>
+//       )}
+//     </li>
+//   );
+// }

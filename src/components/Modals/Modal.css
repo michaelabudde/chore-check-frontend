@@ -34,13 +34,13 @@
 .modal__close-button {
   position: absolute;
   top: 20px;
-  right: 28px;
+  right: 20px;
   background-image: url(../../images/Close-Button-grey.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-color: transparent;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border: 4px solid transparent;
   border-radius: 10px;
   margin: 4px;

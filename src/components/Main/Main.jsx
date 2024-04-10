@@ -15,7 +15,9 @@ const Main = ({ openModal }) => {
 
         <h2>Digitally track chores in any household.</h2>
 
-        <button className="main__button">Sign up here</button>
+        <button className="main__button" onClick={() => openModal("signup")}>
+          Sign up here
+        </button>
 
         <img src={cleaning_1} alt="cleaning image" className="main__image" />
 
