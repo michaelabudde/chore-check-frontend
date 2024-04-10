@@ -16,6 +16,7 @@ import AddMemberModal from "./FormModals/AddMemberModal";
 import SigninModal from "./FormModals/SigninModal";
 import SignupModal from "./FormModals/SignupModal";
 import ConfirmSignout from "./ConfirmModals/ConfirmSignout.jsx";
+import EditProfileModal from "./FormModals/EditProfileModal.jsx";
 // Preview Modals
 
 import "./App.css";
@@ -115,7 +116,7 @@ function App() {
         {activeModal === "editProfile" && (
           <EditProfileModal
             onClose={handleCloseModal}
-            handleProfileUpdate={handleProfileUpdate}
+            // handleProfileUpdate={handleProfileUpdate}
             isLoading={isLoading}
           />
         )}
