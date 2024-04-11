@@ -30,6 +30,8 @@
 }
 
 .nav_trigger {
+  height: 30px;
+  width: 30px;
 }
 
 .nav_avatar {
@@ -103,8 +105,21 @@
   cursor: pointer;
   color: #6b84d1;
 }
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 840px) {
   .nav {
-    padding-right: 4rem; /* Adjust this value as needed */
+    padding-right: 20px;
+  }
+  .nav_avatar {
+    width: 35px;
+    height: 35px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .nav {
+    padding-right: 10px;
+  }
+  .nav_avatar {
+    width: 30px;
+    height: 30px;
   }
 }

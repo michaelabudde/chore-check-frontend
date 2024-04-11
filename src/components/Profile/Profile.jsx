@@ -6,10 +6,10 @@ import ProfileCard from "../Cards/ProfileCard";
 const Profile = ({ openModal }) => {
   return (
     <div className="profile">
-      <div className="sidebar">
+      <div className="profile__sidebar">
         <ProfileCard openModal={openModal} />
       </div>
-      <div className="profile-content">
+      <div className="profile__content">
         <div className="profile__heading">
           <h2> Your Chore List</h2>
           <button

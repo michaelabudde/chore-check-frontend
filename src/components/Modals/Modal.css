@@ -5,8 +5,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* Take full width of the viewport */
-  height: 100vh; /* Take full height of the viewport */
+  width: 100%; /* Take full width of the viewport */
+  height: 100%; /* Take full height of the viewport */
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 22;
 }

@@ -54,7 +54,6 @@ const Navigation = ({ isOpen, openModal, toggleDropdown, onClose }) => {
           </div>
         </div>
       </div>
-      ;
     </nav>
   );
 };

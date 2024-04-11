@@ -8,11 +8,27 @@
   position: relative;
   top: 0;
   left: 0;
-  width: 100vw; /* Ensure the header takes full width */
+  width: 100%; /* Ensure the header takes full width */
   box-sizing: border-box;
 }
 
 .header__title {
   display: flex;
   align-items: center; /* Align items vertically in the center */
+}
+@media screen and (max-width: 840px) {
+  .header {
+    padding: 12px 22px 12px 22px;
+  }
+  .header__title {
+    max-width: 200px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .header {
+    padding: 12px 22px 12px 22px;
+  }
+  .header__title {
+    max-width: 150px;
+  }
 }
