@@ -5,13 +5,17 @@
 }
 
 .nav_button {
-  border: none;
+  padding: 16px;
+  border-radius: 30px;
+  margin-bottom: 30px;
+  background: #cbe1b7;
+  /* border: none;
   padding: 5px 20px;
   background-color: #fff;
   color: #000;
   line-height: 1.2;
   cursor: pointer;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out; */
 }
 
 .nav_button:hover {
@@ -71,16 +75,6 @@
   opacity: 1;
   visibility: visible;
 }
-
-/* .nav_dropdown::before {
-  content: "";
-  position: absolute;
-  top: -5;
-  right: 20px;
-  height: 20px;
-  width: 20px;
-  transform: rotate(45deg);
-} */
 
 .nav_dropdown ul {
   padding: 0;

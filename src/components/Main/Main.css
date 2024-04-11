@@ -15,7 +15,18 @@
   left: 0; /* Position from the left edge of the viewport */
   min-height: 100vh;
 }
-
+.main__title {
+  font-size: 48px;
+}
+.main__subtitle {
+  font-size: 34px;
+  margin-top: 10px;
+}
+.main__p {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 24px;
+}
 .main__catch {
   display: flex;
   flex-direction: column;
@@ -32,7 +43,7 @@
 }
 .main__image {
   width: 80vw;
-  padding-top: 40px;
+  padding-top: 30px;
 }
 .main__how {
   display: flex;
@@ -70,7 +81,7 @@
   padding: 10px;
 }
 .main_p {
-  margin-top: 0;
+  margin-top: 10px;
   margin-bottom: 20px;
   font-size: 22px;
 }
