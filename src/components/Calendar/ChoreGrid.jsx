@@ -15,6 +15,11 @@ const ChoreGridWrapper = styled.div`
     calc(100% / 7)
   ); /* Equal width for each column */
   background: white;
+  @media screen and (max-width: 640px) {
+    display: grid;
+    grid-template-rows: ${({ first }) => (first ? "auto" : "")} repeat(7, 1fr);
+    grid-template-columns: unset; /* Remove the column layout */
+  }
 `;
 
 const ChoreGridItem = styled.div`

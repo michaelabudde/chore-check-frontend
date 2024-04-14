@@ -12,26 +12,24 @@ const Wrapper = styled.div`
   border: 2px solid #9fbd84;
   border-radius: 30px;
 `;
-// const HGrid = styled.div`
-//   display: grid;
-//   grid-template-columns: ${({ first }) => (first ? "auto" : "")} repeat(
-//       ${({ cols }) => cols},
-//       1fr
-//     );
-// `;
-
+const InnerWrapper = styled.div`
+  @media screen and (max-width: 640px) {
+    display: flex;
+    flex-direction: row;
+  }
+`;
 const WeekWrapper = styled.div`
-  display: flex;
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
   overflow: hidden;
   width: 100%;
   display: grid;
-  // background-color: #f1fde6;
-  grid-template-columns: ${({ first }) => (first ? "auto" : "")} repeat(
-      ${({ cols }) => cols},
-      1fr
-    );
+  grid-template-columns: ${({ first }) => (first ? "auto" : "")} repeat(7, 1fr);
+  @media screen and (max-width: 640px) {
+    display: grid;
+    grid-template-rows: ${({ first }) => (first ? "auto" : "")} repeat(7, 1fr);
+    grid-template-columns: unset; /* Remove the column layout */
+  }
 `;
 const DayWrapper = styled.span`
   background: ${({ isToday }) => (isToday ? "#FFF7E9" : "")};
@@ -42,19 +40,6 @@ const DayWrapper = styled.span`
     border-left: none; /* Remove border-left for the first column */
   }
 `;
-// const ChoreWrapper = styled.span`
-//   background: ${({ isToday }) => (isToday ? "#FFF7E9" : "")};
-//   border-top: 2px solid #9fbd84;
-//   border-left: 2px solid #9fbd84;
-//   &:first-child {
-//     border-left: none; /* Remove border-left for the first column in each row */
-//   }
-//   // grid-template-columns: ${({ first }) => (first ? "auto" : "")} repeat(
-//   //     ${({ cols }) => cols},
-//   //     1fr
-//   //   );
-//   z-index: 50;
-// `;
 
 const FlexBox = styled.div`
   display: flex;
@@ -84,24 +69,25 @@ const Calendar = () => {
   return (
     <>
       <Wrapper>
-        <WeekWrapper cols={7}>
-          {DAYS.map((day) => {
-            const isDayToday = isToday(
-              addDateBy(mondayDate, DAYS.indexOf(day))
-            );
+        <InnerWrapper>
+          <WeekWrapper cols={7}>
+            {DAYS.map((day) => {
+              const isDayToday = isToday(
+                addDateBy(mondayDate, DAYS.indexOf(day))
+              );
 
-            return (
-              <DayWrapper key={day} isToday={isDayToday}>
-                <p>{day}</p>
-              </DayWrapper>
-            );
-          })}
-        </WeekWrapper>
+              return (
+                <DayWrapper key={day} isToday={isDayToday}>
+                  <p>{day}</p>
+                </DayWrapper>
+              );
+            })}
+          </WeekWrapper>
 
-        <DayGrid firstDayOfWeek={firstDayOfWeek} />
+          <DayGrid firstDayOfWeek={firstDayOfWeek} />
 
-        <ChoreGrid firstDayOfWeek={firstDayOfWeek} />
-
+          <ChoreGrid firstDayOfWeek={firstDayOfWeek} />
+        </InnerWrapper>
         <FlexBox>
           <button onClick={prevWeek}>
             <img src={chevron_left} alt="Left Arrow"></img>

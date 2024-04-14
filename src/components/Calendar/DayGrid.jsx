@@ -1,21 +1,29 @@
+import styled from "styled-components";
+
 import { addDays, format, isToday } from "date-fns";
 
-function DayGrid({ firstDayOfWeek }) {
-  return (
-    <div
-      style={{
-        position: "sticky",
+const DateWrapper = styled.div`
+position: "sticky",
         top: 1,
         display: "grid",
-        gridTemplateColumns: `repeat(7, 1fr)`,
+        grid-template-columns: ${({ first }) =>
+          first ? "auto" : ""} repeat(7, 1fr),
         boxShadow: "0 8px 16px #CBE1B7",
         background: "white",
         zIndex: 10,
         alignContent: "center",
         // gridColumn: "span 2",
         borderTop: "2px solid #9fbd84",
-      }}
-    >
+        @media screen and (max-width: 640px) {
+          display: grid;
+          grid-template-rows: ${({ first }) =>
+            first ? "auto" : ""} repeat(7, 1fr);
+          grid-template-columns: unset; /* Remove the column layout */
+        }
+`;
+function DayGrid({ firstDayOfWeek }) {
+  return (
+    <div style={{}}>
       {Array.from({ length: 7 }).map((_, weekday) => {
         const currentDate = addDays(new Date(firstDayOfWeek), weekday); // Create a new Date object for each day
         const formattedDate = format(currentDate, "MM/dd/yy");
