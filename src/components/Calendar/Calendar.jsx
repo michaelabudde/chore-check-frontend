@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { addDays, format, isToday } from "date-fns";
 import { areDatesSame, addDateBy, getMonday } from "../../utils/utils.jsx";
-import DayGrid from "./DayGrid.jsx";
+import DateGrid from "./DateGrid.jsx";
 import ChoreGrid from "./ChoreGrid.jsx";
 import chevron_left from "../../images/chevron_left_icon.svg";
 import chevron_right from "../../images/chevron_right_icon.svg";
@@ -84,7 +84,7 @@ const Calendar = () => {
             })}
           </WeekWrapper>
 
-          <DayGrid firstDayOfWeek={firstDayOfWeek} />
+          <DateGrid firstDayOfWeek={firstDayOfWeek} />
 
           <ChoreGrid firstDayOfWeek={firstDayOfWeek} />
         </InnerWrapper>
