@@ -10,6 +10,12 @@ const CompletedChoreContent = styled.div`
   height: auto; /* Adjusted height */
   max-width: 100%;
   overflow: hidden;
+  @media screen and (max-width: 440px) {
+    max-width: 100px;
+  }
+  @media screen and (max-width: 350px) {
+    max-width: 90px;
+  }
 `;
 
 const CompletedChoreName = styled.p`
@@ -22,6 +28,12 @@ const CompletedChoreName = styled.p`
   display: flex;
   flex-wrap: nowrap;
   max-width: 100%;
+  @media screen and (max-width: 440px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 14px;
+  }
 `;
 
 const CompletedChoreIcon = styled.div`
@@ -30,6 +42,10 @@ const CompletedChoreIcon = styled.div`
   text-decoration: none;
   object-fit: cover;
   border-radius: 50%;
+  @media screen and (max-width: 440px) {
+    width: 10px;
+    height: 10px;
+  }
 `;
 
 const CompletedChoreMember = styled.p`
@@ -42,6 +58,12 @@ const CompletedChoreMember = styled.p`
   display: flex;
   flex-wrap: nowrap;
   max-width: 100%;
+  @media screen and (max-width: 440px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 14px;
+  }
 `;
 
 const CompletedChoreAvatar = styled.div`
@@ -50,6 +72,10 @@ const CompletedChoreAvatar = styled.div`
   text-decoration: none;
   object-fit: cover;
   border-radius: 50%;
+  @media screen and (max-width: 440px) {
+    width: 10px;
+    height: 10px;
+  }
 `;
 
 const ChoreRow = styled.div`

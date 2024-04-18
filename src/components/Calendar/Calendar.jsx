@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import "./Calendar.css";
 import { useState, useEffect } from "react";
 import { addDays, format, isToday } from "date-fns";
 import { areDatesSame, addDateBy, getMonday } from "../../utils/utils.jsx";
@@ -39,6 +40,13 @@ const DayWrapper = styled.span`
   &:first-child {
     border-left: none; /* Remove border-left for the first column */
   }
+  @media screen and (max-width: 640px) {
+    border-left: none;
+    border-top: 2px solid #9fbd84;
+    &:first-child {
+      border-top: none; /* Remove border-top for first row */
+    }
+  }
 `;
 
 const FlexBox = styled.div`
@@ -78,7 +86,7 @@ const Calendar = () => {
 
               return (
                 <DayWrapper key={day} isToday={isDayToday}>
-                  <p>{day}</p>
+                  <p className="day">{day}</p>
                 </DayWrapper>
               );
             })}

@@ -31,6 +31,13 @@ const ChoreGridItem = styled.div`
   max-width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
+  @media screen and (max-width: 640px) {
+    border-left: none;
+    border-top: 2px solid #9fbd84;
+    &:first-child {
+      border-top: none; /* Remove border-left for the first column */
+    }
+  }
 `;
 export const getCompletedChores = () => {
   // Fetch completed chores from your database
