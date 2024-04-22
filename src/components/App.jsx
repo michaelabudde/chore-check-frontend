@@ -20,7 +20,7 @@ import EditProfileModal from "./FormModals/EditProfileModal.jsx";
 // Preview Modals
 
 // Utils
-import { iconData } from "../utils/iconApi.jsx";
+import { iconData } from "../../../chore-check-backend/iconApi.jsx";
 
 import "./App.css";
 
