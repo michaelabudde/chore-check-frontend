@@ -10,7 +10,7 @@ const Card = styled.div`
   border-radius: 30px;
   padding-top: 30px;
   padding-bottom: 10px;
-  width: 30vw;
+  // width: 30vw;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -20,6 +20,9 @@ const Card = styled.div`
   align-content: center;
   gap: 24px;
   position: relative;
+  // @media screen and (max-width: 640px) {
+  //   width: 80vw;
+  // }
 `;
 const MemberAvatar = styled.div`
   width: 60px;

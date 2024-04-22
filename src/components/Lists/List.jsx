@@ -7,12 +7,10 @@ const ListWrapper = styled.div`
   max-width: 90vw;
   display: flex;
   flex-direction: row;
-  gap: 24px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   align-content: center;
-  gap: 24px;
   position: relative;
 `;
 const List = ({ children }) => {

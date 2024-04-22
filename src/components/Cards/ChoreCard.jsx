@@ -5,10 +5,10 @@ import { React, useContext } from "react";
 const CardContainer = styled.div`
   position: relative;
   display: flex;
-  justify-content: center;
-  align-content: center;
+  justify-content: left;
+  padding-left: 16px;
   align-items: center;
-  width: 400px;
+  width: 80%;
   height: 98px;
   border-radius: 30px;
   gap: 12px;

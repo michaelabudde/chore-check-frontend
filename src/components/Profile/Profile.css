@@ -33,3 +33,25 @@
   background: #d3dbf4;
   margin-top: 26px;
 }
+@media screen and (max-width: 840px) {
+  .profile {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    gap: 20px;
+  }
+  .profile__sidebar {
+    width: 40vw;
+  }
+}
+@media screen and (max-width: 710px) {
+  .profile {
+    display: flex;
+    flex-direction: column;
+  }
+  .profile__sidebar {
+    width: 80vw;
+  }
+  .profile__content {
+    width: 80vw;
+  }
+}

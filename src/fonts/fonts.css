@@ -34,7 +34,7 @@
   font-weight: 300;
   font-display: swap;
   src: local(
-      "chore-check-frontend/src/vendor/Outfit-fonts/Outfit-VariableFont_wght.woff2"
+      "chore-check-frontend/src/fonts/Outfit-fonts/Outfit-VariableFont_wght.woff2"
     ),
     url(https://fonts.gstatic.com/s/outfit/v11/QGYyz_MVcBeNP4NjuGObqx1XmO1I4W61O4a0EwItq6fNIg.woff2)
       format("woff2");
@@ -49,7 +49,7 @@
   font-weight: 600;
   font-display: swap;
   src: local(
-      "chore-check-frontend/src/vendor/Outfit-fonts/Outfit-VariableFont_wght.woff2"
+      "chore-check-frontend/src/fonts/Outfit-fonts/Outfit-VariableFont_wght.woff2"
     ),
     url(https://fonts.gstatic.com/s/outfit/v11/QGYyz_MVcBeNP4NjuGObqx1XmO1I4e6yO4a0EwItq6fNIg.woff2)
       format("woff2");
@@ -64,7 +64,7 @@
   font-weight: 700;
   font-display: swap;
   src: local(
-      "chore-check-frontend/src/vendor/Outfit-fonts/Outfit-VariableFont_wght.woff2"
+      "chore-check-frontend/src/fonts/Outfit-fonts/Outfit-VariableFont_wght.woff2"
     ),
     url(https://fonts.gstatic.com/s/outfit/v11/QGYyz_MVcBeNP4NjuGObqx1XmO1I4deyO4a0EwItq6fNIg.woff2)
       format("woff2");
