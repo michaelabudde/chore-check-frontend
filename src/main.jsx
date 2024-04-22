@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./components/App";
-import Profile from "./components/Profile/Profile";
+require("dotenv").config();
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 
