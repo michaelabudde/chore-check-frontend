@@ -19,6 +19,9 @@ import ConfirmSignout from "./ConfirmModals/ConfirmSignout.jsx";
 import EditProfileModal from "./FormModals/EditProfileModal.jsx";
 // Preview Modals
 
+// Utils
+import { iconData } from "../utils/iconApi.jsx";
+
 import "./App.css";
 
 function App() {

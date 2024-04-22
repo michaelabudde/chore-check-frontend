@@ -1,21 +1,14 @@
-export const iconData = (url, options) => {
-  // Append authorization header with your API key
-  const headers = {
-    accept: "application/json",
-    Authorization: `Bearer ${process.env.API_KEY}`,
-  };
-
-  // Merge provided headers with authorization header
-  const mergedOptions = {
-    ...options,
+export const iconData = (query) => {
+  const url = `https://api.iconfinder.com/v4/icons/search?query=${query}&count=10&premium=0`;
+  const options = {
+    method: "GET",
     headers: {
-      ...options.headers,
-      ...headers,
+      accept: "application/json",
+      Authorization: `Bearer ${process.env.API_KEY}`,
     },
   };
 
-  // Perform the fetch request
-  return fetch(url, mergedOptions)
+  return fetch(url, options)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -23,8 +16,7 @@ export const iconData = (url, options) => {
       return response.json();
     })
     .then((data) => {
-      // Process the response data as needed
-      return data;
+      return data.icons; // Return only the icons from the response
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
