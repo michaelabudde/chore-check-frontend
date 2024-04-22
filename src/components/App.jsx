@@ -4,10 +4,9 @@ import { Routes, Route } from "react-router-dom";
 // Components
 import Header from "../components/Header/Header";
 import Main from "../components/Main/Main";
+import CalendarPage from "../components/Calendar/CalendarPage";
 import Footer from "../components/Footer/Footer";
 import Profile from "../components/Profile/Profile";
-import Modal from "../components/Modals/Modal.jsx";
-import ModalWithForm from "./FormModals/ModalWithForm.jsx";
 
 // From Modals
 import LogChoreModal from "./FormModals/LogChoreModal";
@@ -20,7 +19,6 @@ import EditProfileModal from "./FormModals/EditProfileModal.jsx";
 // Preview Modals
 
 // Utils
-import { iconData } from "../../../chore-check-backend/iconApi.jsx";
 
 import "./App.css";
 
@@ -62,6 +60,10 @@ function App() {
         />
         <Routes>
           <Route path="/" element={<Main openModal={handleOpenModal} />} />
+          <Route
+            path="/calendar"
+            element={<CalendarPage openModal={handleOpenModal} />}
+          />
           <Route
             path="/profile"
             element={<Profile openModal={handleOpenModal} />}
