@@ -6,7 +6,7 @@ import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 
 const SigninModal = ({
   onClose,
-  handleSignin,
+  signIn,
   openModal,
   signinError,
   isLoading,

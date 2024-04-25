@@ -1,11 +1,13 @@
 import "./Main.css";
+import Calendar from "../Calendar/Calendar";
+import ChoreList from "../Lists/ChoreList";
+import MemberList from "../Lists/MemberList";
 import cleaning_1 from "../../images/cleaning_1.png";
 import cleaning_2 from "../../images/cleaning_2.png";
 import author_image from "../../images/profilegreenmb.png";
-
-const Main = ({ openModal }) => {
+const SignedOutMain = ({ openModal, signIn }) => {
   return (
-    <main className="main">
+    <div>
       <div className="main__catch">
         <h1 className="main__title">Need Some Help Managing Chores?</h1>
 
@@ -41,7 +43,6 @@ const Main = ({ openModal }) => {
         <img src={cleaning_2} alt="cleaning image" className="main__image" />
       </div>
 
-      {/* always return about section */}
       <div className="main__about">
         <div className="main__about_image">
           <img
@@ -65,9 +66,40 @@ const Main = ({ openModal }) => {
           </p>
         </div>
       </div>
+    </div>
+  );
+};
+const SignedInMain = () => {
+  return (
+    <div className="main__catch">
+      <h1>Your Completed Chores This Week</h1>
+      <button className="main__button" onClick={() => openModal("logChore")}>
+        Log a Chore
+      </button>
+      <div className="main__calendar">
+        <Calendar />
+      </div>
+      <h2> Your Chore List</h2>
+      <button className="main__button" onClick={() => openModal("addChore")}>
+        Add a Chore
+      </button>
+      <ChoreList />
+
+      <h2> Your Household Members</h2>
+      <button className="main__button" onClick={() => openModal("addMember")}>
+        Add a Member
+      </button>
+      <MemberList />
+
+      <img src={cleaning_2} alt="cleaning image" className="main__image" />
+    </div>
+  );
+};
+const Main = ({ openModal, isSignedIn }) => {
+  return (
+    <main className="main">
+      {isSignedIn ? <SignedInMain /> : <SignedOutMain />}
     </main>
   );
 };
 export default Main;
-
-// {/* {isSignedIn ? signedInMain : signedOutMain} */}

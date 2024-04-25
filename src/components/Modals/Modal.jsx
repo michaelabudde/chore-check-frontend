@@ -16,8 +16,8 @@ const Modal = ({
   // useClickOutside(modalRef, onClose);
   return (
     <div className="modal">
+      <div className="modal__overlay" onClick={onClose} />
       <div className="modal__container" ref={modalRef}>
-        <div className="modal__overlay" onClick={onClose} />
         <button
           type="button"
           onClick={onClose}

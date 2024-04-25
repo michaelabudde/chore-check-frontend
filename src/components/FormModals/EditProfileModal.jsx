@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import ModalWithForm from "./ModalWithForm";
+import { iconData } from "../../../../chore-check-backend/iconApi";
 // import { useEffect, useContext } from "react";
 // import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 // import { CurrentUserContext } from "../../contexts/CurrentUserContext";
@@ -7,6 +9,19 @@ const EditProfileModal = ({ onClose, handleProfileUpdate, isLoading }) => {
   // removed isopen
   //   const { values, handleChange, errors, resetForm } = useFormAndValidation();
   //   const { currentUser } = useContext(CurrentUserContext);
+
+  const [icons, setIcons] = React.useState({});
+
+  useEffect(() => {
+    // Fetch icons from the Iconfinder API when the component mounts
+    iconData("", 10) // Example: Fetch 10 icons with 'arrow' query
+      .then((icons) => {
+        setIcons(icons);
+      })
+      .catch((error) => {
+        console.error("Error fetching icons:", error);
+      });
+  }, []);
 
   const formInfo = {
     title: "Edit Profile",
@@ -24,6 +39,10 @@ const EditProfileModal = ({ onClose, handleProfileUpdate, isLoading }) => {
       disabled: false,
     },
   ];
+
+  //make api call
+  //get results
+  //set iconlist using setIconList
 
   //   function onSubmit(e) {
   //     e.preventDefault();
@@ -72,18 +91,23 @@ const EditProfileModal = ({ onClose, handleProfileUpdate, isLoading }) => {
       <label className="modal-form__label" htmlFor="link">
         Profile Picture URL
       </label>
-      <input
-        className="modal-form__input"
-        id="link"
-        name="avatar"
-        placeholder={"Image Link"}
-        type="url"
-        // onChange={handleChange}
-        // value={values.avatar}
-      />
-      <span className="modal-form__error" id="link-error">
-        {/* {errors.avatar || ""} */}
-      </span>
+
+      {dataLoaded && (
+        <select
+          className="modal-form__select"
+          id="icon"
+          name="icon"
+          onChange={handleChange}
+          value={values.icon || ""}
+        >
+          <option value="">Select an icon</option>
+          {icons.map((icon) => (
+            <option key={icon.id} value={icon.id}>
+              {icon.name}
+            </option>
+          ))}
+        </select>
+      )}
     </ModalWithForm>
   );
 };

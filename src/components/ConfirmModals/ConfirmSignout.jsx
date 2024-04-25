@@ -5,7 +5,7 @@ import useEsc from "../../hooks/useEsc";
 // import ModalWithForm from "../FormModals/ModalWithForm";
 import ConfirmModal from "./ConfirmModal";
 
-const ConfirmSignout = ({ handleSignout, isLoading, isOpen, onClose }) => {
+const ConfirmSignout = ({ signOut, isLoading, isOpen, onClose }) => {
   useEsc(onClose);
   return (
     <ConfirmModal
@@ -22,7 +22,7 @@ const ConfirmSignout = ({ handleSignout, isLoading, isOpen, onClose }) => {
         type="button"
         className="confirm-modal__button"
         onClick={() => {
-          handleSignout();
+          signOut();
         }}
       >
         {isLoading ? "Signing out..." : "Sign Out"}

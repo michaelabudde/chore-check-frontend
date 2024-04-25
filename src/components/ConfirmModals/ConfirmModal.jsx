@@ -2,13 +2,7 @@ import React from "react";
 import useEsc from "../../hooks/useEsc";
 import "./ConfirmModal.css";
 import Modal from "../Modals/Modal";
-const ConfirmModal = ({
-  handleSignout,
-  isLoading,
-  isOpen,
-  onClose,
-  children,
-}) => {
+const ConfirmModal = ({ signOut, isLoading, isOpen, onClose, children }) => {
   useEsc(onClose);
   return (
     <Modal

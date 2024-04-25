@@ -8,30 +8,21 @@ import "./Navigation.css";
 // import { AuthContext } from "../../contexts/AuthContext.js";
 import default_profile_icon from "../../images/greendefaultprofile.png";
 
-const Navigation = ({ isOpen, openModal, toggleDropdown, onClose }) => {
+const Navigation = ({
+  isOpen,
+  openModal,
+  toggleDropdown,
+  onClose,
+  isSignedIn,
+}) => {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null); // Ref for dropdown menu container
 
   useClickOutside(dropdownRef, () => isOpen && toggleDropdown());
   useEsc(() => isOpen && toggleDropdown());
 
-  return (
-    /* {isSignedIn ? signedInHeader : signedOutHeader} */
-    // Signed out Header:
-    // <nav className="nav">
-    //   <div>
-    //     <button className="nav_button" onClick={() => openModal("signup")}>
-    //       Sign Up
-    //     </button>
-    //   </div>
-    //   <div>
-    //     <button className="nav_button" onClick={() => openModal("signin")}>
-    //       Log In
-    //     </button>
-    //   </div>
-    // </nav>
-    // Signed in header
-    <nav className="nav">
+  const SignedInNav = () => {
+    return (
       <div className="nav_signedin">
         <div className="nav_container">
           <div className="nav_trigger" onClick={toggleDropdown}>
@@ -69,7 +60,26 @@ const Navigation = ({ isOpen, openModal, toggleDropdown, onClose }) => {
           </div>
         </div>
       </div>
-    </nav>
+    );
+  };
+  const SignedOutNav = () => {
+    return (
+      <div className="navSignedOut">
+        <div>
+          <button className="nav_button" onClick={() => openModal("signup")}>
+            Sign Up
+          </button>
+        </div>
+        <div>
+          <button className="nav_button" onClick={() => openModal("signin")}>
+            Log In
+          </button>
+        </div>
+      </div>
+    );
+  };
+  return (
+    <nav className="nav">{isSignedIn ? <SignedInNav /> : <SignedOutNav />}</nav>
   );
 };
 export default Navigation;

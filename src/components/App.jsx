@@ -4,7 +4,6 @@ import { Routes, Route } from "react-router-dom";
 // Components
 import Header from "../components/Header/Header";
 import Main from "../components/Main/Main";
-import CalendarPage from "../components/Calendar/CalendarPage";
 import Footer from "../components/Footer/Footer";
 import Profile from "../components/Profile/Profile";
 
@@ -26,7 +25,17 @@ function App() {
   // General functions
   const [errorResponse, setErrorResponse] = useState("");
   const [isLoading, setIsLoading] = React.useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(false);
 
+  const signIn = () => {
+    // Simulate signing in by changing the state
+    setIsSignedIn(true);
+  };
+
+  const signOut = () => {
+    // Simulate signing out by changing the state
+    setIsSignedIn(false);
+  };
   // NavDropDown and Modal  functions
   const [isModalOpen, setModalOpen] = useState(false);
   const [activeModal, setActiveModal] = useState(null);
@@ -57,12 +66,19 @@ function App() {
           isOpen={isDropdownOpen}
           toggleDropdown={handleToggleDropdown}
           onClose={handleCloseModal}
+          isSignedIn={isSignedIn}
         />
         <Routes>
-          <Route path="/" element={<Main openModal={handleOpenModal} />} />
           <Route
-            path="/calendar"
-            element={<CalendarPage openModal={handleOpenModal} />}
+            path="/"
+            element={
+              <Main
+                openModal={handleOpenModal}
+                isSignedIn={isSignedIn}
+                signIn={signIn}
+                signOut={signOut}
+              />
+            }
           />
           <Route
             path="/profile"
@@ -83,6 +99,7 @@ function App() {
           <SignupModal
             isOpen={isModalOpen}
             onClose={handleCloseModal}
+            signIn={signIn}
             // openModal={handleOpenModal}
             // signupError={signupError}
             // isLoading={isLoading}
@@ -93,6 +110,7 @@ function App() {
           <SigninModal
             isOpen={isModalOpen}
             onClose={handleCloseModal}
+            signIn={signIn}
             // openModal={handleOpenModal}
             // loginError={loginError}
             // isLoading={isLoading}
@@ -128,7 +146,7 @@ function App() {
         {activeModal === "signout" && (
           <ConfirmSignout
             onClose={handleCloseModal}
-            // handleSignout={handleSignout}
+            signOut={signOut}
             isLoading={isLoading}
           />
         )}

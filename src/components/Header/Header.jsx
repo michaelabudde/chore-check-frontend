@@ -5,7 +5,7 @@ import "./Header.css";
 import Navigation from "../Navigation/Navigation";
 import chorechecktitle from "../../images/greenCCtitle.svg";
 
-const Header = ({ isOpen, openModal, toggleDropdown, onClose }) => {
+const Header = ({ isOpen, openModal, toggleDropdown, onClose, isSignedIn }) => {
   return (
     <header className="header">
       <div>
@@ -22,6 +22,7 @@ const Header = ({ isOpen, openModal, toggleDropdown, onClose }) => {
         isOpen={isOpen}
         toggleDropdown={toggleDropdown}
         onClose={onClose}
+        isSignedIn={isSignedIn}
       />
     </header>
   );
