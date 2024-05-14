@@ -9,14 +9,29 @@ const ResultsList = styled.div`
   overflow-y: scroll;
   max-height: 300px;
 `;
-// const [results, setResults] = useState([]);
-
 export const SearchResultList = ({ results }) => {
   return (
     <ResultsList>
-      {results.map((results, id) => {
-        return <div key={id}>{results.preview_urls}</div>;
-      })}
+      {results.map((icon, id) => (
+        <div key={id}>
+          <img src={icon.preview_urls} alt={`Icon ${id}`} />
+        </div>
+      ))}
     </ResultsList>
   );
 };
+// export const SearchResultList = ({ results }) => {
+//   return (
+//     <ResultsList>
+//       {results.map(icon, id) => {
+//         return <div key={id}>{icon.preview_urls}</div>;
+//       })}
+//     </ResultsList>
+//   );
+// };
+
+// {
+//   results.map((url, index) => (
+//     <div key={index}>{url}</div> // Use index as key for lack of a better unique identifier
+//   ));
+// }

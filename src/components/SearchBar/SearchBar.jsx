@@ -29,20 +29,21 @@ const SearchInput = styled.input`
   }
 `;
 
-function SearchBar(setResults) {
+function SearchBar() {
   const [icons, setIcons] = useState([]);
   const [input, setInput] = useState("");
 
-  const fetchData = (result) => {
+  const fetchData = () => {
     fetch(`https://chorecheckapi.azurewebsites.net/api/iconfinder`)
-      .then((result) => {
-        return result.json();
+      .then((response) => {
+        return response.json();
       })
       .then((data) => {
         console.log(data);
         setIcons(data);
       });
   };
+
   const handleChange = (value) => {
     setInput(value);
     fetchData(value);
@@ -61,3 +62,14 @@ function SearchBar(setResults) {
   );
 }
 export default SearchBar;
+
+// useEffect(() => {
+//   fetch(`https://chorecheckapi.azurewebsites.net/api/iconfinder`)
+//     .then((result) => {
+//       return result.json();
+//     })
+//     .then((data) => {
+//       console.log(data);
+//       setIcons(data);
+//     });
+// }, []);
