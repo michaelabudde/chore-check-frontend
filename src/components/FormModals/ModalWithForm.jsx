@@ -20,18 +20,7 @@ const ModalWithForm = ({
   useEsc(onClose);
   // useClickOutside(modalRef, onClose);
   // const { response } = useContext(ResponseContext);
-  const [icons, setIcons] = useState([]);
 
-  useEffect(() => {
-    // Fetch icons from the Iconfinder API when the component mounts
-    iconData("arrow", 10) // Example: Fetch 10 icons with 'arrow' query
-      .then((icons) => {
-        setIcons(icons);
-      })
-      .catch((error) => {
-        console.error("Error fetching icons:", error);
-      });
-  }, []);
   return (
     <Modal formInfo={formInfo} isOpen={isOpen} onClose={onClose}>
       <div ref={modalRef}>

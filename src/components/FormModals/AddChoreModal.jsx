@@ -8,6 +8,7 @@ const AddChoreModal = ({
   response,
   isLoading,
   isOpen,
+  icons,
 }) => {
   // isopen removed
   const { values, handleChange, errors, resetForm } = useFormAndValidation();

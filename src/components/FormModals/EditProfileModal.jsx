@@ -10,19 +10,6 @@ const EditProfileModal = ({ onClose, handleProfileUpdate, isLoading }) => {
   //   const { values, handleChange, errors, resetForm } = useFormAndValidation();
   //   const { currentUser } = useContext(CurrentUserContext);
 
-  const [icons, setIcons] = React.useState({});
-
-  useEffect(() => {
-    // Fetch icons from the Iconfinder API when the component mounts
-    iconData("", 10) // Example: Fetch 10 icons with 'arrow' query
-      .then((icons) => {
-        setIcons(icons);
-      })
-      .catch((error) => {
-        console.error("Error fetching icons:", error);
-      });
-  }, []);
-
   const formInfo = {
     title: "Edit Profile",
     name: "editProfile",

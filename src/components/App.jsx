@@ -6,6 +6,7 @@ import Header from "../components/Header/Header";
 import Main from "../components/Main/Main";
 import Footer from "../components/Footer/Footer";
 import Profile from "../components/Profile/Profile";
+import SearchBar from "./SearchBar/SearchBar.jsx";
 
 // From Modals
 import LogChoreModal from "./FormModals/LogChoreModal";
@@ -26,7 +27,19 @@ function App() {
   const [errorResponse, setErrorResponse] = useState("");
   const [isLoading, setIsLoading] = React.useState(false);
   const [isSignedIn, setIsSignedIn] = useState(false);
+  // API
+  // const [icons, setIcons] = useState([]);
 
+  // useEffect(() => {
+  //   fetch(`https://chorecheckapi.azurewebsites.net/api/iconfinder`)
+  //     .then((result) => {
+  //       return result.json();
+  //     })
+  //     .then((data) => {
+  //       console.log(data);
+  //       setIcons(data);
+  //     });
+  // }, []);
   const signIn = () => {
     // Simulate signing in by changing the state
     setIsSignedIn(true);
@@ -100,10 +113,10 @@ function App() {
             isOpen={isModalOpen}
             onClose={handleCloseModal}
             signIn={signIn}
-            // openModal={handleOpenModal}
+            openModal={handleOpenModal}
             // signupError={signupError}
             // isLoading={isLoading}
-            // handleSignup={handleSignup}
+            handleSignup={() => "say hi"}
           />
         )}
         {activeModal === "signin" && (
@@ -121,6 +134,7 @@ function App() {
           <AddChoreModal
             isOpen={isModalOpen}
             onClose={handleCloseModal}
+
             // errorResponse={errorResponse}
             // isLoading={isLoading}
             // onAddChore={handleAddItemSubmit}
@@ -130,6 +144,7 @@ function App() {
           <AddMemberModal
             isOpen={isModalOpen}
             onClose={handleCloseModal}
+
             // isLoading={isLoading}
             // errorResponse={errorResponse}
             // onAddMember={handleAddItemSubmit}
@@ -150,6 +165,7 @@ function App() {
             isLoading={isLoading}
           />
         )}
+        <SearchBar />
         <Footer openModal={handleOpenModal} />
       </div>
     </div>
