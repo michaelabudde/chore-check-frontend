@@ -31,16 +31,23 @@ const SearchInput = styled.input`
 
 function SearchBar() {
   const [icons, setIcons] = useState([]);
+  console.log(icons); // icons starts empty []
   const [input, setInput] = useState("");
 
   const fetchData = () => {
     fetch(`https://chorecheckapi.azurewebsites.net/api/iconfinder`)
       .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
         return response.json();
       })
       .then((data) => {
         console.log(data);
         setIcons(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
       });
   };
 
