@@ -1,21 +1,29 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 const ResultsList = styled.div`
-  width: 100%;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
-  border-radius: 30px;
+  border: 2px solid #cbe1b7;
   margin-top: 10px;
   overflow-y: scroll;
   max-height: 300px;
+  padding: 10px;
+`;
+const ResultsItem = styled.div`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 `;
 export const SearchResultList = ({ results }) => {
+  console.log(results);
+
   return (
     <ResultsList>
       {results.map((icon, id) => (
-        <div key={id}>
+        <ResultsItem key={id}>
           <img src={icon.preview_urls} alt={`Icon ${id}`} />
-        </div>
+        </ResultsItem>
       ))}
     </ResultsList>
   );
