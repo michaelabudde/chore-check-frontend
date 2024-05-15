@@ -22,7 +22,7 @@ export const SearchResultList = ({ results }) => {
     <ResultsList>
       {results.map((icon, id) => (
         <ResultsItem key={id}>
-          <img src={icon.preview_urls} alt={`Icon ${id}`} />
+          <img src={icon} alt={`Icon ${id}`} />
         </ResultsItem>
       ))}
     </ResultsList>
