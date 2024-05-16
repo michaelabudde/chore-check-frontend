@@ -4,6 +4,7 @@ import "./ModalWithForm.css";
 
 import { useEffect } from "react";
 import { useFormAndValidation } from "../../hooks/useFormAndValidation";
+import SearchBar from "../SearchBar/SearchBar";
 
 const SignupModal = ({
   onClose,
@@ -41,116 +42,99 @@ const SignupModal = ({
       isLoading={isLoading}
       isOpen={isOpen}
     >
-      {(
-        { icons } // Receive icons as props from ModalWithForm
-      ) => (
-        <>
-          <div className="modal-form__label-container">
-            <label className="modal-form__label" htmlFor="email">
-              Email*
-            </label>
-            <span className="modal-form__error" id="name-error">
-              {errors.email || signupError || ""}
-            </span>
-          </div>
+      <>
+        <div className="modal-form__label-container">
+          <label className="modal-form__label" htmlFor="email">
+            Email*
+          </label>
+          <span className="modal-form__error" id="name-error">
+            {errors.email || signupError || ""}
+          </span>
+        </div>
 
-          <input
-            className="modal-form__input"
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
-            minLength="1"
-            maxLength="30"
-            required
-            onChange={handleChange}
-            value={values.email || ""}
-          />
-          <div className="modal-form__label-container">
-            <label className="modal-form__label" htmlFor="password">
-              Password*
-            </label>
-            <span className="modal-form__error" id="name-error">
-              {errors.password || ""}
-            </span>
-          </div>
-          <input
-            className="modal-form__input"
-            type="text"
-            id="password"
-            name="password"
-            placeholder="Password"
-            minLength="1"
-            maxLength="30"
-            required
-            onChange={handleChange}
-            value={values.password || ""}
-          />
-          <div className="modal-form__label-container">
-            <label className="modal-form__label" htmlFor="name">
-              Name*
-            </label>
-            <span className="modal-form__error" id="name-error">
-              {errors.name || ""}
-            </span>
-          </div>
-          <input
-            className="modal-form__input"
-            type="text"
-            id="member"
-            name="member"
-            placeholder="Name"
-            minLength="1"
-            maxLength="30"
-            required
-            onChange={handleChange}
-            value={values.member || ""}
-          />
-          <div className="modal-form__label-container">
-            <label className="modal-form__label" htmlFor="house">
-              Household Name
-            </label>
-            <span className="modal-form__error" id="house-error">
-              {errors.name || ""}
-            </span>
-          </div>
-          <input
-            className="modal-form__input"
-            type="text"
-            id="house"
-            name="house"
-            placeholder="Household Name (Optional)"
-            minLength="1"
-            maxLength="30"
-            required
-            onChange={handleChange}
-            value={values.house || ""}
-          />
-          <div className="modal-form__label-container">
-            <label className="modal-form__label" htmlFor="link">
-              Select Profile Icon
-            </label>
-            <span className="modal-form__error" id="link-error">
-              {errors.avatar || ""}
-            </span>
-          </div>
+        <input
+          className="modal-form__input"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          minLength="1"
+          maxLength="30"
+          required
+          onChange={handleChange}
+          value={values.email || ""}
+        />
+        <div className="modal-form__label-container">
+          <label className="modal-form__label" htmlFor="password">
+            Password*
+          </label>
+          <span className="modal-form__error" id="name-error">
+            {errors.password || ""}
+          </span>
+        </div>
+        <input
+          className="modal-form__input"
+          type="text"
+          id="password"
+          name="password"
+          placeholder="Password"
+          minLength="1"
+          maxLength="30"
+          required
+          onChange={handleChange}
+          value={values.password || ""}
+        />
+        <div className="modal-form__label-container">
+          <label className="modal-form__label" htmlFor="name">
+            Name*
+          </label>
+          <span className="modal-form__error" id="name-error">
+            {errors.name || ""}
+          </span>
+        </div>
+        <input
+          className="modal-form__input"
+          type="text"
+          id="member"
+          name="member"
+          placeholder="Name"
+          minLength="1"
+          maxLength="30"
+          required
+          onChange={handleChange}
+          value={values.member || ""}
+        />
+        <div className="modal-form__label-container">
+          <label className="modal-form__label" htmlFor="house">
+            Household Name
+          </label>
+          <span className="modal-form__error" id="house-error">
+            {errors.name || ""}
+          </span>
+        </div>
+        <input
+          className="modal-form__input"
+          type="text"
+          id="house"
+          name="house"
+          placeholder="Household Name (Optional)"
+          minLength="1"
+          maxLength="30"
+          required
+          onChange={handleChange}
+          value={values.house || ""}
+        />
+        <div className="modal-form__label-container">
+          <label className="modal-form__label" htmlFor="link">
+            Select Profile Icon
+          </label>
+          <span className="modal-form__error" id="link-error">
+            {errors.avatar || ""}
+          </span>
+        </div>
 
-          <select
-            className="modal-form__select"
-            id="icon"
-            name="icon"
-            onChange={handleChange}
-            value={values.icon || ""}
-          >
-            <option value="">Select an icon</option>
-            {icons.map((icon) => (
-              <option key={icon.id} value={icon.id}>
-                {icon.name}
-              </option>
-            ))}
-          </select>
-        </>
-      )}
+        <SearchBar />
+      </>
     </ModalWithForm>
   );
 };

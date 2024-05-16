@@ -11,9 +11,10 @@ const ResultsList = styled.div`
   padding: 10px;
 `;
 const ResultsItem = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
+  margin: 1px;
 `;
 export const SearchResultList = ({ results }) => {
   console.log(results);
