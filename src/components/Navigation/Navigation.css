@@ -1,5 +1,6 @@
 .nav {
   display: flex;
+  flex-direction: row;
   gap: 20px;
   padding-right: 2rem;
 }
@@ -31,6 +32,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
 .nav_trigger {

@@ -23,7 +23,7 @@ const Navigation = ({
 
   const SignedInNav = () => {
     return (
-      <div className="nav_signedin">
+      <div>
         <div className="nav_container">
           <div className="nav_trigger" onClick={toggleDropdown}>
             <img
@@ -64,17 +64,14 @@ const Navigation = ({
   };
   const SignedOutNav = () => {
     return (
-      <div className="navSignedOut">
-        <div>
-          <button className="nav_button" onClick={() => openModal("signup")}>
-            Sign Up
-          </button>
-        </div>
-        <div>
-          <button className="nav_button" onClick={() => openModal("signin")}>
-            Log In
-          </button>
-        </div>
+      <div className="nav_container">
+        <button className="nav_button" onClick={() => openModal("signup")}>
+          Sign Up
+        </button>
+
+        <button className="nav_button" onClick={() => openModal("signin")}>
+          Log In
+        </button>
       </div>
     );
   };
