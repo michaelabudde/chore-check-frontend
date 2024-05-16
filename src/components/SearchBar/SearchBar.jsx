@@ -4,12 +4,11 @@ import { SearchResultList } from "./SearchResultList";
 const SearchContainer = styled.div`
   position: relative;
   display: flex;
-  width: 400px;
-  height: 48px;
+  width: 440px;
+  height: 38px;
   border-radius: 30px;
   padding-left: 10px;
   transition: all 0.3s ease;
-  margin-left: 20px;
 `;
 const SearchInput = styled.input`
   padding-left: 10px;
@@ -17,18 +16,19 @@ const SearchInput = styled.input`
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
   height: 100%;
-  width 100%;
+  max-width: 440px;
   background-color: transparent;
   outline: none;
   font-size: 16px;
-  border: 1px solid transparent;
-  border-color: #000;
+  border: 1.6px solid #000;
   border-radius: 30px;
-
+  font-family: "CabinetGrotesk-Bold", Arial, sans-serif;
+  font-size: 16px;
 
   &:focus {
-    border-color: #cbe1b7;    border-radius: 30px;
+    border-color: #cbe1b7;
   }
 `;
 

@@ -165,7 +165,6 @@ function App() {
             isLoading={isLoading}
           />
         )}
-        <SearchBar />
         <Footer openModal={handleOpenModal} />
       </div>
     </div>

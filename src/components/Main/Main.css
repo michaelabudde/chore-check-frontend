@@ -39,7 +39,10 @@
   padding: 16px;
   border-radius: 30px;
   margin-bottom: 30px;
-  background: #d3dbf4;
+  background: #cbe1b7;
+}
+.main__button:hover {
+  opacity: 0.4;
 }
 .main__image {
   width: 80vw;

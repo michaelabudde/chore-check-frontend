@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 const ResultsList = styled.div`
-  max-width: 300px;
+  max-width: 440px;
   display: flex;
   flex-direction: column;
   border: 2px solid #cbe1b7;
-  margin-top: 10px;
+  margin: 10px;
   overflow-y: scroll;
-  max-height: 300px;
+  max-height: 100px;
   padding: 10px;
 `;
 const ResultsItem = styled.div`
