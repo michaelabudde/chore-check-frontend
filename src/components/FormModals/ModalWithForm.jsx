@@ -14,6 +14,7 @@ const ModalWithForm = ({
   isLoading,
   formInfo,
   isOpen,
+  isSignedIn,
 }) => {
   const modalRef = useRef(null);
 
@@ -40,7 +41,11 @@ const ModalWithForm = ({
           {children}
 
           <div className="modal-form__button-wrapper">
-            <button type="submit" className="modal-form__submit-button">
+            <button
+              type="submit"
+              className="modal-form__submit-button"
+              onClick={onSubmit}
+            >
               {isLoading ? "Saving..." : formInfo?.buttonText}
             </button>
           </div>

@@ -11,20 +11,33 @@ const SigninModal = ({
   signinError,
   isLoading,
   isOpen,
+  setIsSignedIn,
 }) => {
   // removed isOpen
   const { values, handleChange, errors, resetForm } = useFormAndValidation();
-
+  // const signIn = () => {
+  //   // Simulate signing in by changing the state
+  //   setIsSignedIn(true);
+  // };
+  const onSubmit = (e) => {
+    e.preventDefault();
+    signIn();
+    onClose();
+  };
+  // const signOut = () => {
+  //   // Simulate signing out by changing the state
+  //   setIsSignedIn(false);
+  // };
   const formInfo = {
     title: "Sign in",
     name: "signin",
     buttonText: "Sign In",
   };
 
-  function onSubmit(e) {
-    e.preventDefault();
-    handleSignin(values);
-  }
+  // function onSubmit(e) {
+  //   e.preventDefault();
+  //   handleSignin(values);
+  // }
 
   useEffect(() => {
     resetForm();

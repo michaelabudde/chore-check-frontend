@@ -8,7 +8,7 @@ import SearchBar from "../SearchBar/SearchBar";
 
 const SignupModal = ({
   onClose,
-  handleSignUp,
+  signIn,
   openModal,
   signupError,
   isLoading,
@@ -26,7 +26,8 @@ const SignupModal = ({
 
   function onSubmit(e) {
     e.preventDefault();
-    handleSignUp(values);
+    signIn();
+    onClose();
   }
 
   useEffect(() => {

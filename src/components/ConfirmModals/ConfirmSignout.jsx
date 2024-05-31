@@ -7,6 +7,7 @@ import ConfirmModal from "./ConfirmModal";
 
 const ConfirmSignout = ({ signOut, isLoading, isOpen, onClose }) => {
   useEsc(onClose);
+
   return (
     <ConfirmModal
       // onSubmit={onSubmit}
@@ -14,7 +15,6 @@ const ConfirmSignout = ({ signOut, isLoading, isOpen, onClose }) => {
       isOpen={isOpen}
       onClose={onClose}
     >
-      {/* <div className="confirmation-modal__container"> */}
       <h1 className="confirmation-modal__query">
         Are you sure you want to sign out?
       </h1>
@@ -23,6 +23,7 @@ const ConfirmSignout = ({ signOut, isLoading, isOpen, onClose }) => {
         className="confirm-modal__button"
         onClick={() => {
           signOut();
+          onClose();
         }}
       >
         {isLoading ? "Signing out..." : "Sign Out"}
@@ -30,7 +31,6 @@ const ConfirmSignout = ({ signOut, isLoading, isOpen, onClose }) => {
       <button type="button" className="confirm-modal__cancel" onClick={onClose}>
         Cancel
       </button>
-      {/* </div> */}
     </ConfirmModal>
   );
 };

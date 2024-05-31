@@ -40,6 +40,7 @@ function App() {
   //       setIcons(data);
   //     });
   // }, []);
+  // const toggleSignIn = () => setIsSignedIn(!isSignedIn);
   const signIn = () => {
     // Simulate signing in by changing the state
     setIsSignedIn(true);
@@ -88,8 +89,8 @@ function App() {
               <Main
                 openModal={handleOpenModal}
                 isSignedIn={isSignedIn}
-                signIn={signIn}
-                signOut={signOut}
+                // signIn={signIn}
+                // signOut={signOut}
               />
             }
           />
@@ -117,6 +118,7 @@ function App() {
             // signupError={signupError}
             // isLoading={isLoading}
             handleSignup={() => "say hi"}
+            setIsSignedIn={setIsSignedIn}
           />
         )}
         {activeModal === "signin" && (
@@ -124,6 +126,7 @@ function App() {
             isOpen={isModalOpen}
             onClose={handleCloseModal}
             signIn={signIn}
+            setIsSignedIn={setIsSignedIn}
             // openModal={handleOpenModal}
             // loginError={loginError}
             // isLoading={isLoading}
