@@ -6,7 +6,7 @@ import cleaning_1 from "../../images/cleaning_1.png";
 import cleaning_2 from "../../images/cleaning_2.png";
 import author_image from "../../images/profilegreenmb.png";
 
-const SignedOutMain = () => {
+const SignedOutMain = ({ openModal }) => {
   return (
     <div>
       <div className="main__catch">
@@ -70,7 +70,7 @@ const SignedOutMain = () => {
     </div>
   );
 };
-const SignedInMain = () => {
+const SignedInMain = ({ openModal }) => {
   return (
     <div className="main__catch">
       <h1>Your Completed Chores This Week</h1>
