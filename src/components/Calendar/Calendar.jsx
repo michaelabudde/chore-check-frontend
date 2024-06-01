@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
+
 // import shouldForwardProp from "@styled-system/should-forward-prop";
 import "./Calendar.css";
 import { useState, useEffect } from "react";
@@ -33,7 +35,8 @@ const WeekWrapper = styled.div`
     grid-template-columns: unset; /* Remove the column layout */
   }
 `;
-const DayWrapper = styled.span`
+
+const DayWrapper = styled(({ isToday, ...props }) => <span {...props} />)`
   background: ${({ isToday }) => (isToday ? "#FFF7E9" : "")};
   display: block;
   width: 100%; /* Set the width to 100% */
@@ -49,6 +52,9 @@ const DayWrapper = styled.span`
     }
   }
 `;
+DayWrapper.propTypes = {
+  isToday: PropTypes.bool,
+};
 
 const FlexBox = styled.div`
   display: flex;

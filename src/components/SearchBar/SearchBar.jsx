@@ -34,7 +34,6 @@ const SearchInput = styled.input`
 
 function SearchBar() {
   const [icons, setIcons] = useState([]);
-  console.log(icons); // icons starts empty []
   const [input, setInput] = useState("");
   const [isResultListActive, setIsResultListActive] = useState(false);
 
@@ -47,9 +46,7 @@ function SearchBar() {
         return result.json();
       })
       .then((data) => {
-        console.log(data);
         setIcons(data.preview_urls);
-        console.log(data.preview_urls);
         setIsResultListActive(true);
       })
       .catch((error) => {
