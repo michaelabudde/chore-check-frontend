@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState, useRef } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 
 // Components
 import Header from "../components/Header/Header";
@@ -28,20 +28,14 @@ function App() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [isSignedIn, setIsSignedIn] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
   // API
-  // const [icons, setIcons] = useState([]);
+  useEffect(() => {
+    if (!isSignedIn && location.pathname === "/profile") {
+      navigate("/");
+    }
+  }, [isSignedIn, location.pathname, navigate]);
 
-  // useEffect(() => {
-  //   fetch(`https://chorecheckapi.azurewebsites.net/api/iconfinder`)
-  //     .then((result) => {
-  //       return result.json();
-  //     })
-  //     .then((data) => {
-  //       console.log(data);
-  //       setIcons(data);
-  //     });
-  // }, []);
-  // const toggleSignIn = () => setIsSignedIn(!isSignedIn);
   const signIn = () => {
     // Simulate signing in by changing the state
     setIsSignedIn(true);
@@ -67,9 +61,7 @@ function App() {
     setModalOpen(true);
     setActiveModal(modalName);
   }, []);
-  // const handleToggleDropdown = useCallback(() => {
-  //   setDropdownOpen((prev) => !prev); // Toggle the dropdown state
-  // }, []);
+
   const handleToggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
