@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState, useRef } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 // Components
 import Header from "../components/Header/Header";
@@ -27,6 +27,7 @@ function App() {
   const [errorResponse, setErrorResponse] = useState("");
   const [isLoading, setIsLoading] = React.useState(false);
   const [isSignedIn, setIsSignedIn] = useState(false);
+  const navigate = useNavigate();
   // API
   // const [icons, setIcons] = useState([]);
 
@@ -49,6 +50,7 @@ function App() {
   const signOut = () => {
     // Simulate signing out by changing the state
     setIsSignedIn(false);
+    navigate("/");
   };
   // NavDropDown and Modal  functions
   const [isModalOpen, setModalOpen] = useState(false);
