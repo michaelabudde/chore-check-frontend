@@ -1,5 +1,6 @@
 {
   "name": "chore_check_vite",
+  "homepage": "https://chorecheck.ignorelist.com",
   "private": true,
   "version": "0.0.0",
   "type": "module",

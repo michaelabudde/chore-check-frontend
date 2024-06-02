@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import ModalWithForm from "./ModalWithForm";
-import { iconData } from "../../../../chore-check-backend/iconApi";
 // import { useEffect, useContext } from "react";
 // import { useFormAndValidation } from "../../hooks/useFormAndValidation";
 // import { CurrentUserContext } from "../../contexts/CurrentUserContext";

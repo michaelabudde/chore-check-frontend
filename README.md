@@ -21,6 +21,10 @@ In the future users can:
 - integrate the chore calendar with google cal
 - contribute to a public message board with tips on chore tracking
 
+# Link to Live Site:
+
+https://chorecheck.ignorelist.com
+
 # Link to Backend Repo:
 
 https://github.com/michaelabudde/chore-check-backend.git

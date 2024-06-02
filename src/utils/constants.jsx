@@ -3,7 +3,10 @@ export const headers = {
   authorization: "",
   "Content-Type": "application/json",
 };
-export const baseUrl = "http://localhost:3001";
+export const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://chorecheckapi.azurewebsites.net/api/iconfinder" // changed to backend
+    : "http://localhost:3001";
 
 export const fetchedMembers = [
   {
