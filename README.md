@@ -25,7 +25,13 @@ In the future users can:
 
 https://chorecheck.ignorelist.com
 
+# Link to Azure Backend:
+
+https://chorecheckapi.azurewebsites.net/api/iconfinder
+
 # Link to Backend Repo:
+
+(currently unused)
 
 https://github.com/michaelabudde/chore-check-backend.git
 
