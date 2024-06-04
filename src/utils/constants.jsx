@@ -4,9 +4,8 @@ export const headers = {
   "Content-Type": "application/json",
 };
 export const baseUrl =
-  process.env.NODE_ENV === "production"
-    ? "https://chorecheckapi.azurewebsites.net/api/iconfinder" // changed to backend
-    : "http://localhost:3001";
+  process.env.NODE_ENV ===
+  "https://chorecheckapi.azurewebsites.net/api/iconfinder"; // removed port 3001
 
 export const fetchedMembers = [
   {
