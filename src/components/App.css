@@ -1,10 +1,28 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 0;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 100%;
 }
 
+.page {
+  margin: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 100%;
+}
+.page_wrapper {
+  margin: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 100%;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +57,15 @@
 
 .read-the-docs {
   color: #888;
+}
+
+@media screen and (max-width: 840px) {
+  .page {
+    /* max-width: 840px; */
+  }
+}
+@media screen and (max-width: 320px) {
+  .page {
+    /* max-width: 320px; */
+  }
 }

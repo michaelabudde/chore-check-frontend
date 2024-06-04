@@ -1,0 +1,120 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding-right: 2rem;
+}
+
+.nav_button {
+  padding: 16px;
+  border-radius: 30px;
+  margin-bottom: 30px;
+  background: #cbe1b7;
+  /* border: none;
+  padding: 5px 20px;
+  background-color: #fff;
+  color: #000;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out; */
+}
+
+.nav_button:hover {
+  opacity: 0.4;
+}
+
+.nav_container {
+  position: relative;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.nav_trigger {
+  height: 30px;
+  width: 30px;
+}
+
+.nav_avatar {
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.nav_dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + -30px);
+  right: calc(100% + -60px);
+  background-color: #e0f1d0;
+  border-radius: 30px;
+  padding: 10px 20px;
+  width: 200px;
+  z-index: 99;
+  opacity: 0; /* Initially invisible */
+  visibility: hidden; /* Initially hidden */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Add transition */
+}
+.nav__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 98;
+}
+
+.nav_dropdown.active {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav_dropdown ul {
+  padding: 0;
+  font-size: 20px;
+}
+
+.nav_username {
+  text-decoration: none;
+  text-align: center;
+  font-size: 30px;
+}
+
+.nav_dropdown_item {
+  display: flex;
+  margin: 10px auto;
+  border-top: 1px solid #868686;
+  padding: 10px 0;
+  justify-content: center;
+}
+
+.nav_dropdown_item:hover {
+  cursor: pointer;
+  color: #6b84d1;
+}
+@media screen and (max-width: 840px) {
+  .nav {
+    padding-right: 20px;
+  }
+  .nav_avatar {
+    width: 35px;
+    height: 35px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .nav {
+    padding-right: 10px;
+  }
+  .nav_avatar {
+    width: 30px;
+    height: 30px;
+  }
+}

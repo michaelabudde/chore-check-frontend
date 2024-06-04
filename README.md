@@ -12,16 +12,38 @@ Busy households can be hard to manage. By digitizing the household chore chart u
 
 Conflict can arise when households can't recall who has (or hasn't) done what. Having a handy tracker can make all the difference!
 
+# Tech Stack
+
+The frontend was built with Vite, React, and CSS. The API was configured with Azure function app.
+
+# Notes On Limited Functionality
+
+The app is currently at the MVP stage meaning the following functionality is not engineered:
+
+- The API generates a selection of icons in the sign up modal, however the icons are not filtered and cannot be selected.
+- Currently the app mimics sign up, sign in and sign out functionality with basic state changes.
+- The functionality for adding to the calendar and adding or editing chores and family members is not available.
+- The functionality for editing the user profile is not available.
+
 # Future Improvements
 
 In the future users can:
 
 - share chore calendars with other users
-- edit chore and member cards
-- integrate the chore calendar with google cal
+- integrate the chore calendar with google calendar
 - contribute to a public message board with tips on chore tracking
 
+# Link to Live Site:
+
+http://chorecheck.ignorelist.com
+
+# Link to Azure Backend:
+
+https://chorecheckapi.azurewebsites.net/api/iconfinder
+
 # Link to Backend Repo:
+
+(currently unused)
 
 https://github.com/michaelabudde/chore-check-backend.git
 

@@ -1,0 +1,12 @@
+.list {
+  /* width: 100%; */
+  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 60px;
+  padding-right: 60px;
+  justify-content: center;
+}
+.list__pretext {
+  font-size: small;
+}

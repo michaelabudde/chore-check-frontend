@@ -1,0 +1,99 @@
+.modal-form__title {
+  font-size: 26px;
+  line-height: 1.1;
+  max-width: 440px;
+  margin: 0px;
+  color: #000;
+}
+.modal-form__form {
+  margin: 0px;
+  max-width: 440px;
+}
+/* .modal-form__text-inputs {
+  display: flex;
+  flex-direction: column;
+  padding-top: 24px;
+} */
+.modal-form__label-container {
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  width: 440px;
+}
+.modal-form__label {
+  display: flex;
+  align-items: flex-start;
+  color: #000;
+  font-size: 20px;
+  line-height: 1.1;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  flex-direction: column;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+.modal-form__option {
+  font-size: 22px;
+}
+.modal-form__error {
+  color: red;
+  margin-left: 10px;
+  font-family: "CabinetGrotesk-Bold", Arial, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  max-width: fit-content;
+  word-wrap: break-word;
+  overflow: hidden; /* Hide any overflowing text */
+  text-overflow: ellipsis; /* Add an ellipsis (...) for overflow text */
+}
+.modal-form__input {
+  color: rgba(0, 0, 0, 0.5);
+  font-family: "CabinetGrotesk-Bold", Arial, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  /* font-weight: 700; */
+  border: 1.6px solid #000;
+  border-radius: 30px;
+  /* line-height: 1.1; */
+  /* border-top: #000;
+  border-left: #000;
+  border-right: #000; */
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 440px;
+  padding-left: 10px;
+  margin-bottom: 5px;
+  color-scheme: none;
+}
+
+.modal-form__input:focus {
+  /* color: #cbe1b7; */
+  border: 2px solid #cbe1b7;
+  /* accent-color: #cbe1b7; */
+  outline: none;
+}
+
+.modal-form__submit-button:hover {
+  opacity: 0.6;
+}
+.modal-form__submit-button:disabled {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: default;
+}
+.modal-form__button-wrapper {
+  display: flex;
+  gap: 12px;
+
+  padding-top: 20px;
+  /* padding-bottom: 20px; */
+  align-items: center;
+  justify-content: center;
+}
+.modal-form__submit-button {
+  padding: 16px;
+  border-radius: 30px;
+  /* margin-bottom: 30px; */
+  background: #d3dbf4;
+}

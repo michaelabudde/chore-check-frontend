@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
+// Header.jsx
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import chorechecktitle from "../../images/cc_title.svg";
-import Navigation from "./Navigation";
-const Header = ({ handleClick }) => {
+import Navigation from "../Navigation/Navigation";
+import chorechecktitle from "../../images/greenCCtitle.svg";
+
+const Header = ({ isOpen, openModal, toggleDropdown, onClose, isSignedIn }) => {
   return (
     <header className="header">
       <div>
@@ -15,8 +17,15 @@ const Header = ({ handleClick }) => {
           />
         </Link>
       </div>
-      <Navigation />
+      <Navigation
+        openModal={openModal}
+        isOpen={isOpen}
+        toggleDropdown={toggleDropdown}
+        onClose={onClose}
+        isSignedIn={isSignedIn}
+      />
     </header>
   );
 };
+
 export default Header;

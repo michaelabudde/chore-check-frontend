@@ -1,0 +1,57 @@
+.confirmation-modal__container {
+  width: 670px;
+  max-width: 90vw;
+  max-height: fit-content;
+  position: relative;
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4em;
+  z-index: 12;
+}
+
+.confirmation-modal__query {
+  font-size: 26px;
+  line-height: 1.1;
+  max-width: 440px;
+  margin: 0px;
+  color: #000;
+  margin: 40px 30px 30px 30px;
+}
+
+.confirmation-modal__warning {
+  font-family: "Cabinet Grotesk Medium", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.confirmation-modal__delete {
+  margin-top: 40px;
+  font-family: "Cabinet Grotesk Medium", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ff4d00;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: auto;
+  padding: 0;
+}
+
+.confirm-modal__cancel {
+  padding: 16px;
+  border-radius: 30px;
+  margin: 10px 30px;
+  background: #e4e4e4;
+}
+.confirm-modal__button {
+  padding: 16px;
+  border-radius: 30px;
+  margin: 10px 30px;
+  background: #e0f1d0;
+}
