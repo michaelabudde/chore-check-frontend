@@ -14,7 +14,7 @@ const DAYS = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
 // create a chores const that will generate chores from db.json until backend set up.
 const Wrapper = styled.div`
   border: 2px solid #9fbd84;
-  border-radius: 30px;
+  border-radius: 0px;
 `;
 const InnerWrapper = styled.div`
   @media screen and (max-width: 640px) {
@@ -23,8 +23,8 @@ const InnerWrapper = styled.div`
   }
 `;
 const WeekWrapper = styled.div`
-  border-top-right-radius: 30px;
-  border-top-left-radius: 30px;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
   overflow: hidden;
   width: 100%;
   display: grid;
@@ -62,8 +62,8 @@ const FlexBox = styled.div`
   font-size: 1.2rem;
   background: #f1fde6;
   padding: 8px 24px;
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
   button {
     font-size: 1.2rem;
     display: flex;
