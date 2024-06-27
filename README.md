@@ -33,6 +33,12 @@ In the future users can:
 - integrate the chore calendar with google calendar
 - contribute to a public message board with tips on chore tracking
 
+## Images
+
+<img src="./src//images/ChoreCheckHomeScrnshot.png" width="100"/>
+
+<img src="./src//images/ChoreCheckCalScrnshot.png" width="100"/>
+
 # Link to Live Site:
 
 http://chorecheck.ignorelist.com
