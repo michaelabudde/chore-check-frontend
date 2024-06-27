@@ -35,9 +35,11 @@ In the future users can:
 
 ## Images
 
-<img src="./src//images/ChoreCheckHomeScrnshot.png" width="200"/>
+<p float="left">
+<img src="./src//images/ChoreCheckHomeScrnshot.png" width="400"/>
 
-<img src="./src//images/ChoreCheckCalScrnshot.png" width="200"/>
+<img src="./src//images/ChoreCheckCalScrnshot.png" width="400"/>
+</p>
 
 # Link to Live Site:
 
